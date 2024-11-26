@@ -4,32 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Codex Ignite Quiz</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .quiz-container {
-      width: 300px;
-      margin: 50px auto;
-      text-align: center;
-    }
-    .question {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-    .choices button {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-    }
-    .result {
-      font-size: 24px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
+  <link rel="stylesheet" href="style.css"
+   
+ </head>
+ <body>
+  <div class="container">
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar" aria-hidden="true">
+          <ul>
+              <li><a href="#dashboard"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
+              <li><a href="#quiz"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
+              <li><a href="#results"><i class="icon">&#x1F4C8;</i> Results</a></li>
+              <li><a href="#profile"><i class="icon">&#x1F464;</i> Profile</a></li>
+          </ul>
+      </nav>
 
+        <!-- Main Content -->
+        <div class="content">
+            <button class="toggle-btn" id="toggle-btn" aria-expanded="false" aria-controls="sidebar">☰</button>
+
+        
+    
   <div class="quiz-container">
     <div id="quiz">
       <div class="question" id="question">Question will appear here</div>

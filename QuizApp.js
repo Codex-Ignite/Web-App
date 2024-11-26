@@ -53,3 +53,17 @@ function showResult() {
   quizElement.style.display = 'none';
   resultElement.textContent = `You scored ${score} out of ${questions.length}`;
 }
+const toggleBtn = document.getElementById('toggle-btn');
+const sidebar = document.getElementById('sidebar');
+const content = document.querySelector('.content');
+
+// Toggle sidebar visibility
+toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    content.classList.toggle('active');
+
+    // Update aria attributes for accessibility
+    const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', !expanded);
+    sidebar.setAttribute('aria-hidden', expanded);
+});
