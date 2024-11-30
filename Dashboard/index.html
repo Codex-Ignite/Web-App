@@ -4,220 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Codex Ignite Quiz Dashboard</title>
-  <style>
-    /* Reset and base styles */
-    body,
-    ul,
-    li,
-    h1,
-    p {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-family: 'Arial', sans-serif;
-    }
 
-    /* Body background with gradient */
-    body {
-      background: linear-gradient(135deg, #3f2b96, #a8c0ff);
-      color: #fff;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    /* Container for sidebar and content */
-    .container {
-      display: flex;
-      height: 100%;
-      width: 100%;
-      position: relative;
-    }
-
-    /* Sidebar styles */
-    .sidebar {
-      width: 250px;
-      height: 100%;
-      background: linear-gradient(135deg, #232526, #414345);
-      color: #fff;
-      position: fixed;
-      top: 0;
-      left: -250px;
-      transition: all 0.4s ease;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .sidebar ul {
-      padding: 20px;
-    }
-
-    .sidebar ul li {
-      margin: 20px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      animation: slideIn 0.8s ease forwards;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .sidebar ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.2rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .sidebar ul li a:hover {
-      color: #f39c12;
-      transform: translateX(10px);
-    }
-
-    /* Icons for links */
-    .icon {
-      font-size: 1.5rem;
-    }
-
-    /* Content area */
-    .content {
-      margin-left: 0;
-      padding: 40px 20px;
-      flex-grow: 1;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: margin-left 0.4s ease;
-    }
-
-    .content h1 {
-      margin-bottom: 20px;
-      font-size: 3rem;
-      color: #fff;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-      background: linear-gradient(90deg, #ff8a00, #e52e71);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: textFade 2s ease-in-out infinite;
-    }
-
-    @keyframes textFade {
-      0% {
-        opacity: 0.8;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    .content p {
-      font-size: 1.4rem;
-      line-height: 1.8;
-      color: #ddd;
-      max-width: 700px;
-      margin-bottom: 30px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    /* Add gradient button */
-    .start-btn {
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
-      cursor: pointer;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #ff8a00, #e52e71);
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .start-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Toggle button */
-    .toggle-btn {
-      font-size: 1.5rem;
-      background: #34495e;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      padding: 10px 15px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-      border-radius: 50%;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .toggle-btn:hover {
-      background: #f39c12;
-      transform: rotate(90deg);
-    }
-
-    /* Sidebar active state */
-    .sidebar.active {
-      left: 0;
-    }
-
-    .content.active {
-      margin-left: 250px;
-    }
-
-    /* Introduction animation */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive design */
-    @media (max-width: 768px) {
-      .content.active {
-        margin-left: 0;
-      }
-
-      .sidebar {
-        width: 200px;
-      }
-
-      .sidebar ul li a {
-        font-size: 1rem;
-      }
-
-      .icon {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
-
+  
 </head>
 
 <body>
+  <header>
+    <span class="logo" id="logo">Codex Ignite Quiz</span>
+  </header>
+
   <div class="container">
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar" aria-hidden="true">
@@ -230,20 +27,37 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="content">
-      <button class="toggle-btn" id="toggle-btn" aria-expanded="false" aria-controls="sidebar">☰</button>
-
-      <h1>Codex Ignite Quiz</h1>
-      <p>
-        Welcome to the interactive quiz platform designed to ignite your knowledge of HTML, CSS, JavaScript, and other
-        IT-related topics. Get ready to challenge yourself and track your progress through this engaging and dynamic
-        quiz
-        dashboard.
+    <div class="content" id="content">
+      <h1>Welcome to Codex Ignite Quiz</h1>
+      <p>An interactive quiz application for honing your skills in HTML, CSS, JavaScript, and other IT-related topics.
       </p>
-      <button class="start-btn">Start Your Journey</button>
     </div>
+  </div>
 
-    <script src="dashboard.js"></script>
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 Codex Ignite Quiz - Empowering Future IT Professionals | <a href="#">Privacy Policy</a>
+  </footer>
+
+  <script>
+    const logo = document.getElementById('logo');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+
+    // Toggle sidebar visibility when clicking the logo
+    logo.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      content.classList.toggle('active');
+    });
+
+    // Close sidebar when clicking anywhere outside
+    document.addEventListener('click', function (event) {
+      if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 
 </html>
