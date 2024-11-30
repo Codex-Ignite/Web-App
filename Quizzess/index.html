@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codex Ignite Quiz</title>
+  <link rel="stylesheet" href="style.css"
+
+ </head>
+ <body>
+  <div class="container">
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar" aria-hidden="true">
+          <ul>
+              <li><a href="#dashboard"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
+              <li><a href="#quiz"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
+              <li><a href="#results"><i class="icon">&#x1F4C8;</i> Results</a></li>
+              <li><a href="#profile"><i class="icon">&#x1F464;</i> Profile</a></li>
+          </ul>
+      </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+            <button class="toggle-btn" id="toggle-btn" aria-expanded="false" aria-controls="sidebar">☰</button>
+
+        
+    
+  <div class="quiz-container">
+    <div id="quiz">
+      <div class="question" id="question">Question will appear here</div>
+      <div class="choices" id="choices"></div>
+    </div>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script src="QuizApp.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
