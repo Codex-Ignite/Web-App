@@ -1,11 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Codex Ignite Quiz</title>
+  <style>
+    /*--Question container*/
+    body {
+
+      font-family: Arial, sans-serif;
+    }
+
+    .quiz-container {
+      width: 300px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    .question {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .choices button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .result {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    /* Reset and base styles */
+    body,
+    ul,
+    li,
+    h1,
+    p {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: #333;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Container for sidebar and content */
+    .container {
+      display: flex;
+      height: 100%;
+      position: relative;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      width: 250px;
+      height: 100%;
+      background: #34495e;
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      transition: all 0.4s ease;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar ul {
+      padding: 20px;
+    }
+
+    .sidebar ul li {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+      color: #f39c12;
+      transform: translateX(10px);
+    }
+
+    /* Icons for links */
+    .icon {
+      font-size: 1.5rem;
+    }
+
+    /* Content area */
+    .content {
+      margin-left: 0;
+      padding: 40px 20px;
+      flex-grow: 1;
+      transition: margin-left 0.4s ease;
+    }
+
+    .content h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #333;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* Toggle button */
+    .toggle-btn {
+      font-size: 1.5rem;
+      background: #34495e;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px 15px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      border-radius: 50%;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background: transparent;
+      transform: rotate(90deg);
+    }
+
+    /* Sidebar active state */
+    .sidebar.active {
+      left: 0;
+    }
+
+    .content.active {
+      margin-left: 250px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .content.active {
+        margin-left: 0;
+      }
+
+      .sidebar {
+        width: 200px;
+      }
+
+      .sidebar ul li a {
+        font-size: 1rem;
+      }
+
+      .icon {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
-  
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar" aria-hidden="true">
+      <ul>
+        <li><a href="#dashboard"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
+        <li><a href="#quiz"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
+        <li><a href="#results"><i class="icon">&#x1F4C8;</i> Results</a></li>
+        <li><a href="#profile"><i class="icon">&#x1F464;</i> Profile</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+      <button class="toggle-btn" id="toggle-btn" aria-expanded="false" aria-controls="sidebar">☰</button>
+
+
+
+      <div class="quiz-container">
+        <div id="quiz">
+          <div class="question" id="question">Question will appear here</div>
+          <div class="choices" id="choices"></div>
+        </div>
+        <div class="result" id="result"></div>
+      </div>
+
+      <script src="QuizApp.js"></script>
+      <script src="login.js"></script>
 </body>
+
 </html>
