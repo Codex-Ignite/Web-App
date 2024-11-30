@@ -8,7 +8,7 @@
 
 /* Body & Background */
 body {
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    background: linear-gradient(135deg, #004d40, #00796b, #00695c);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -20,17 +20,18 @@ body {
 }
 
 /* Background Animation */
-@keyframes gradientBackground {
+
+@keyframes backgroundChange {
     0% {
-        background: linear-gradient(135deg, #2c3e50, #4ca1af);
+        background: linear-gradient(135deg, #004d40, #00796b, #00695c);
     }
 
     50% {
-        background: linear-gradient(135deg, #4ca1af, #2c3e50);
+        background: linear-gradient(135deg, #004d40, #003c3e, #002e2c);
     }
 
     100% {
-        background: linear-gradient(135deg, #2c3e50, #4ca1af);
+        background: linear-gradient(135deg, #004d40, #00796b, #00695c);
     }
 }
 
@@ -135,7 +136,8 @@ h1 {
 .submit-btn {
     width: 100%;
     padding: 16px;
-    background-color: #0072ff;
+    background: linear-gradient(135deg, #004d40, #00796b, #00695c);
+    /* Matching the body gradient */
     color: white;
     border: none;
     border-radius: 8px;
@@ -148,7 +150,8 @@ h1 {
 
 /* Button Hover Effect */
 .submit-btn:hover {
-    background-color: #005bb5;
+    background: linear-gradient(135deg, #00796b, #004d40, #00695c);
+    /* Slight change to create hover effect */
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
 }
@@ -158,6 +161,7 @@ h1 {
     outline: none;
     box-shadow: 0 0 15px rgba(0, 114, 255, 0.6);
 }
+
 
 /* Login Redirect Link */
 .login-redirect {
@@ -237,4 +241,8 @@ h1 {
 
 .acc {
     color: #4ca1af;
+}
+
+h1 {
+    color: #00695c;
 }
