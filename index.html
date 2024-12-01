@@ -253,7 +253,8 @@
         .acc {
             color: #4ca1af;
         }
-        h1{
+
+        h1 {
             color: #00695c;
         }
     </style>
@@ -278,7 +279,6 @@
         </div>
     </div>
 
-    <script src="login.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const form = document.getElementById("loginForm");
@@ -286,27 +286,39 @@
             const passwordInput = document.getElementById("password");
             const togglePasswordButton = document.getElementById("togglePassword");
             const feedback = document.getElementById("feedback");
-
+    
+            // Predefined email and password
+            const validEmail = "user@gmail.com";
+            const validPassword = "password";
+    
             // Password visibility toggle
             togglePasswordButton.addEventListener("click", () => {
                 const type = passwordInput.type === "password" ? "text" : "password";
                 passwordInput.type = type;
                 togglePasswordButton.textContent = type === "password" ? "Show" : "Hide";
             });
-
+    
             // Handle form submission
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
                 feedback.style.display = "block";
-
-                if (emailInput.value && passwordInput.value) {
+    
+                // Check if the entered email and password match the predefined credentials
+                if (emailInput.value === validEmail && passwordInput.value === validPassword) {
+                    // Simulate successful login and redirect
                     feedback.classList.add("success");
-                    feedback.textContent = "Login successful!";
+                    feedback.textContent = "Login successful! Redirecting to the dashboard...";
+    
+                    setTimeout(() => {
+                        // Redirect to the dashboard after 2 seconds
+                        window.location.href = "./Dashboard/";
+                    }, 2000);
                 } else {
+                    // Show error if credentials do not match
                     feedback.classList.add("error");
-                    feedback.textContent = "Please fill out all fields.";
+                    feedback.textContent = "Invalid email or password. Please try again.";
                 }
-
+    
                 setTimeout(() => {
                     feedback.style.display = "none";
                     feedback.classList.remove("success", "error");
@@ -314,6 +326,6 @@
             });
         });
     </script>
-</body>
+    
 
 </html>
