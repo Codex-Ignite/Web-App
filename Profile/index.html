@@ -2,229 +2,357 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profile.css">
-    <title>User Profile</title>
-    <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codex Ignite Quiz Dashboard</title>
+  <style>
+    /* Reset and base styles */
+    body,
+    ul,
+    li,
+    h1,
+    p {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Arial', sans-serif;
+    }
 
-        /* Body & Background */
-        body {
-            background: linear-gradient(135deg, #004d40, #00796b, #00695c);
-            color: #fff;
-            font-size: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
-        }
+    /* Body styles */
+    body {
+      background: linear-gradient(135deg, #004d40, #00796b, #00695c);
+      color: #fff;
+      height: 130vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+    }
 
-        /* Profile Container */
-        .profile-container {
-            width: 600px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
-            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
+    /* Header styles */
+    header {
+      background: linear-gradient(90deg, #004d40, #00695c);
+      padding: 20px;
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: relative;
+      transition: background 0.3s ease;
+    }
 
-        /* Profile Header */
-        h1 {
-            margin-bottom: 20px;
-            font-size: 36px;
-            color: #333;
-            font-weight: 600;
-            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3);
-        }
+    header .logo {
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 1.8rem;
+      font-family: 'Roboto', sans-serif;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
 
-        /* Profile Avatar */
-        .profile-avatar {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+    header .logo:hover {
+      color: #00bcd4;
+      transform: scale(1.1);
+    }
 
-        .profile-avatar img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-        }
+    /* Sidebar styles */
+    .sidebar {
+      width: 250px;
+      height: 100%;
+      background: linear-gradient(180deg, #00796b, #004d40);
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      transition: all 0.4s ease;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    }
 
-        /* Edit Icon */
-        .edit-icon {
-            margin-left: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            color: #0072ff;
-            transition: color 0.3s ease;
-        }
+    .sidebar ul {
+      padding: 20px;
+    }
 
-        .edit-icon:hover {
-            color: #005bb5;
-        }
+    .sidebar ul li {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.3s ease;
+    }
 
-        /* Profile Details */
-        .profile-details {
-            margin-bottom: 20px;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+    .sidebar ul li:hover {
+      transform: translateX(10px);
+    }
 
-        .profile-details label {
-            font-size: 18px;
-            color: #333;
-            margin: 5px 0;
-        }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      font-family: 'Roboto', sans-serif;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
 
-        .profile-details input {
-            padding: 10px;
-            margin: 5px 0;
-            width: 100%;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-            background-color: rgba(255, 255, 255, 0.8);
-        }
+    .sidebar ul li a:hover {
+      color: #00bcd4;
+      transform: translateX(10px);
+    }
 
-        /* Non-editable Display */
-        .profile-details .non-editable {
-            padding: 10px;
-            margin: 5px 0;
-            width: 100%;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-            background-color: rgba(255, 255, 255, 0.8);
-            text-align: left;
-            color: #333;
-        }
+    /* Main content styles */
+    .content {
+      margin-left: 0;
+      padding: 40px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: margin-left 0.4s ease;
+      animation: fadeIn 1s ease-out;
+    }
 
-        /* Save & Edit Button */
-        .btn {
-            padding: 14px;
-            background-color: #004d40;
-            color: white;
-            border: 2px solid #003d34;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-        }
+    .content .container {
+      width: 70%;
+      max-width: 700px;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid #00bcd4;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
 
-        .btn:hover {
-            background-color: #00695c;
-            transform: scale(1.05);
-            box-shadow: 0 4px 20px rgba(0, 114, 255, 0.4);
-        }
+    .content .container p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #ecf0f1;
+      font-family: 'Open Sans', sans-serif;
+    }
 
-        /* Hide Fields by Default */
-        .profile-details input[disabled] {
-            background-color: #f0f0f0;
-        }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
 
-        /* Responsive Design */
-        @media (max-width: 480px) {
-            .profile-container {
-                width: 100%;
-                padding: 20px;
-            }
+      to {
+        opacity: 1;
+      }
+    }
 
-            h1 {
-                font-size: 28px;
-            }
+    /* Sidebar active state */
+    .sidebar.active {
+      left: 0;
+    }
 
-            .profile-details input {
-                padding: 12px;
-            }
+    .content.active {
+      margin-left: 250px;
+    }
 
-            .btn {
-                padding: 12px;
-            }
-        }
-    </style>
+    /* Footer styles */
+    footer {
+      background: linear-gradient(180deg, #004d40, #00695c);
+      padding: 20px 0;
+      color: #ecf0f1;
+      font-size: 1rem;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-top: 3px solid #00bcd4;
+      box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    footer .container {
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Roboto', sans-serif;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #00bcd4;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Profile picture styles */
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 20px 0;
+      border: 3px solid #00bcd4;
+      object-fit: cover;
+    }
+
+    /* Responsive design for footer */
+    @media (max-width: 768px) {
+      footer {
+        font-size: 0.9rem;
+      }
+
+      footer .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Profile Details */
+    .profile-details {
+      margin-bottom: 20px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .profile-details label {
+      font-size: 16px;
+      color: #ffffff;
+      margin: 5px 0;
+    }
+
+    .profile-details input {
+      padding: 8px;
+      margin: 5px 0;
+      width: 95%;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Non-editable Display */
+    .profile-details .non-editable {
+      padding: 8px;
+      margin: 5px 0;
+      width: 95%;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      background: linear-gradient(135deg, #67d0bf, #43a499, #1c675e);
+      text-align: left;
+      color: #333;
+    }
+
+    /* Save & Edit Button */
+    .btn {
+      padding: 10px;
+      width: 80%;
+      background-color: #004d40;
+      color: white;
+      border: 2px solid #003d34;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 10px auto;
+      margin-top: 30px;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00695c;
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0, 114, 255, 0.4);
+    }
+
+    /* Hide Fields by Default */
+    .profile-details input[disabled] {
+      background-color: #f0f0f0;
+    }
+  </style>
+
 </head>
 
 <body>
-    <div class="profile-container">
-        <!-- Profile Avatar Section -->
-        <div class="profile-avatar">
-            <img src="Person-Icon.webp" alt="Profile Avatar">
-            <span class="edit-icon"></span>
-        </div>
+  <header>
+    <span class="logo" id="logo">Codex Ignite Quiz</span>
+  </header>
 
-        <!-- Profile Header -->
-        <h1>User Profile</h1>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar" aria-hidden="true">
+      <ul>
+        <li><a href="../Dashboard/"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
+        <li><a href="../Quizzes/"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
+        <li><a href="../Results/"><i class="icon">&#x1F4C8;</i> Results</a></li>
+        <li><a href="../Profile/"><i class="icon">&#x1F464;</i> Profile</a></li>
+      </ul>
+    </nav>
 
-        <!-- Profile Details Section -->
+    <!-- Main Content -->
+    <div class="content" id="content">
+
+
+      <!-- Profile section -->
+      <div class="container">
+        <img src="Person-Icon.webp" alt="Profile Picture" class="profile-img">
+        <h2>Profile Details</h2>
         <div class="profile-details">
-            <label for="username">Username</label>
-            <input type="text" id="username"  placeholder="Username" disabled>
+          <label for="username">Username:</label>
+          <input type="text" id="username" placeholder="Username" disabled class="non-editable">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Email" disabled class="non-editable">
 
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Email" disabled>
+          <label for="quizzesTaken">Quizzes Taken</label>
+          <div class="non-editable" id="quizzesTaken">.........</div>
 
-            <label for="quizzesTaken">Quizzes Taken</label>
-            <div class="non-editable" id="quizzesTaken">.........</div>
+          <label for="quizzesTaken">Progress</label>
+          <div class="non-editable" id="quizzesTaken">.........</div>
 
-            <label for="progress">Progress</label>
-            <div class="non-editable" id="progress">.......</div>
+          <button class="btn" id="editBtn">Edit</button>
         </div>
+      </div>
 
-        <!-- Buttons Section -->
-        <button class="btn" id="editButton" onclick="toggleEditProfile()">Edit Profile</button>
-        <button class="btn" id="saveButton" onclick="saveProfile()" style="display:none">Save Changes</button>
     </div>
 
-    <script>
-        let isEditing = false;
+  </div>
+  <footer>
+    <div class="container">
 
-        // Toggle edit profile mode
-        function toggleEditProfile() {
-            isEditing = !isEditing;
+    </div>
+  </footer>
 
-            const inputs = document.querySelectorAll('.profile-details input');
-            const saveButton = document.getElementById('saveButton');
-            const editButton = document.getElementById('editButton');
+  <script>
+    const logo = document.getElementById('logo');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
 
-            // Enable or disable inputs based on the edit mode
-            inputs.forEach(input => {
-                input.disabled = !isEditing;
-            });
+    // Toggle sidebar visibility when clicking the logo
+    logo.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      content.classList.toggle('active');
+    });
 
-            // Change button text
-            if (isEditing) {
-                editButton.style.display = 'none';
-                saveButton.style.display = 'block';
-            } else {
-                editButton.style.display = 'block';
-                saveButton.style.display = 'none';
-            }
-        }
+    // Close sidebar when clicking anywhere outside
+    document.addEventListener('click', function (event) {
+      if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
+      }
+    });
+    document.getElementById("editBtn").addEventListener("click", function () {
+      let inputs = document.querySelectorAll(".profile-details input");
+      let editButton = document.getElementById("editBtn");
+      let isDisabled = inputs[0].disabled;
 
-        // Save profile changes (this would typically be saved to a database)
-        function saveProfile() {
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
+      inputs.forEach(input => {
+        input.disabled = !isDisabled;
+      });
 
-            console.log('Profile Updated:', username, email);
-            alert('Profile updated successfully!');
-            toggleEditProfile();  // Close edit mode
-        }
-    </script>
+      editButton.textContent = isDisabled ? "Save" : "Edit";
+    });
+  </script>
 </body>
 
 </html>
