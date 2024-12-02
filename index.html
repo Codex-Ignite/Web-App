@@ -17,7 +17,7 @@
 
         /* Body & Background */
         body {
-            background: linear-gradient(135deg, #004d40, #00796b, #00695c);
+            background: linear-gradient(135deg, #004d40, #415250, #5d7f7b, #315e59, #4bc6b7);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -289,46 +289,60 @@
             const passwordInput = document.getElementById("password");
             const togglePasswordButton = document.getElementById("togglePassword");
             const feedback = document.getElementById("feedback");
-    
+
             // Predefined email and password
             const validEmail = "user@gmail.com";
             const validPassword = "password";
-    
+
             // Password visibility toggle
             togglePasswordButton.addEventListener("click", () => {
                 const type = passwordInput.type === "password" ? "text" : "password";
                 passwordInput.type = type;
                 togglePasswordButton.textContent = type === "password" ? "Show" : "Hide";
             });
-    
+
             // Handle form submission
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
                 feedback.style.display = "block";
-    
+
+                const email = emailInput.value.trim();
+                const password = passwordInput.value.trim();
+
                 // Check if the entered email and password match the predefined credentials
-                if (emailInput.value === validEmail && passwordInput.value === validPassword) {
-                    // Simulate successful login and redirect
-                    feedback.classList.add("success");
-                    feedback.textContent = "Login successful! Redirecting to the dashboard...";
-    
-                    setTimeout(() => {
-                        // Redirect to the dashboard after 2 seconds
-                        window.location.href = "./Dashboard/";
-                    }, 2000);
+                if (email === validEmail && password === validPassword) {
+                    loginSuccess("Login successful! Redirecting to the dashboard...");
+                } else if (checkAccount(email, password)) {
+                    loginSuccess("Login successful! Redirecting to the dashboard...");
                 } else {
                     // Show error if credentials do not match
                     feedback.classList.add("error");
                     feedback.textContent = "Invalid email or password. Please try again.";
+                    setTimeout(() => {
+                        feedback.style.display = "none";
+                        feedback.classList.remove("success", "error");
+                    }, 3000);
                 }
-    
-                setTimeout(() => {
-                    feedback.style.display = "none";
-                    feedback.classList.remove("success", "error");
-                }, 3000);
             });
+
+            // Function to check if the entered email and password exist in localStorage
+            function checkAccount(email, password) {
+                const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+                return accounts.some(account => account.email === email && account.password === password);
+            }
+
+            // Login success feedback
+            function loginSuccess(message) {
+                feedback.classList.add("success");
+                feedback.textContent = message;
+
+                setTimeout(() => {
+                    window.location.href = "./Dashboard/"; // Redirect to the dashboard
+                }, 2000);
+            }
         });
     </script>
-    
+
+
 
 </html>
