@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../">
+  <link rel="stylesheet" href="../style.css">
   <title>Quizzess</title>
 
 </head>
@@ -16,36 +16,12 @@
   </header>
 
   <div class="container">
-    <!-- Sidebar -->
-    <nav class="sidebar" id="sidebar" aria-hidden="true">
-      <ul>
-        <li><a href="../Dashboard/"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
-        <li><a href="../Quizzes/"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
-        <li><a href="../Results/"><i class="icon">&#x1F4C8;</i> Results</a></li>
-        <li><a href="../Profile/"><i class="icon">&#x1F464;</i> Profile</a></li>
-      </ul>
-    </nav>
+ 
+
+    <h1>Css</h1>
 
 </body>
 
-<script>
-  const logo = document.getElementById('logo');
-  const sidebar = document.getElementById('sidebar');
-  const content = document.getElementById('content');
 
-  // Toggle sidebar visibility when clicking the logo
-  logo.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    content.classList.toggle('active');
-  });
-
-  // Close sidebar when clicking anywhere outside
-  document.addEventListener('click', function (event) {
-    if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
-      sidebar.classList.remove('active');
-      content.classList.remove('active');
-    }
-  });
-</script>
 
 </html>
