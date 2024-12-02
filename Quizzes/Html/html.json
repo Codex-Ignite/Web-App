@@ -1,0 +1,46 @@
+{
+  "HTML": [
+    {
+      "question": "What does HTML stand for?",
+      "options": [
+        "Hyper Text Markup Language",
+        "Hyperlinks and Text Markup Language",
+        "Home Tool Markup Language",
+        "None of the above"
+      ],
+      "answer": "Hyper Text Markup Language"
+    },
+    {
+      "question": "Which of the following is the correct HTML tag for inserting an image?",
+      "options": [
+        "<img src='image.jpg'>",
+        "<image src='image.jpg'>",
+        "<src='image.jpg'>",
+        "<picture src='image.jpg'>"
+      ],
+      "answer": "<img src='image.jpg'>"
+    }
+  ],
+  "JavaScript": [
+    {
+      "question": "What does the 'var' keyword do in JavaScript?",
+      "options": [
+        "Declares a variable",
+        "Declares a constant",
+        "Declares a function",
+        "None of the above"
+      ],
+      "answer": "Declares a variable"
+    },
+    {
+      "question": "Which method is used to convert a string to an integer in JavaScript?",
+      "options": [
+        "parseInt()",
+        "toInteger()",
+        "convertToInt()",
+        "parseString()"
+      ],
+      "answer": "parseInt()"
+    }
+  ]
+}
