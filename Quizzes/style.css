@@ -153,7 +153,8 @@ footer a:hover {
 /* Cards container */
 .container {
   display: flex;
-  flex-direction: column; /* Stack cards vertically */
+  flex-direction: column;
+  /* Stack cards vertically */
   align-items: center;
   gap: 30px;
   padding: 20px;
@@ -164,8 +165,9 @@ footer a:hover {
 .card {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
-  width: 700px; 
-  height: 250px; /* Adjusted height */
+  width: 700px;
+  height: 250px;
+  /* Adjusted height */
   display: flex;
   align-items: center;
   padding: 20px;
@@ -178,7 +180,8 @@ footer a:hover {
 }
 
 .card img {
-  width: 150px; /* Larger images */
+  width: 150px;
+  /* Larger images */
   height: 150px;
   border-radius: 15px;
   margin-right: 30px;
@@ -211,4 +214,36 @@ footer a:hover {
 
 .card a:hover {
   text-decoration: underline;
+}
+
+/* Styling for the logo image */
+.logo-image {
+  width: 80px;
+  /* Set the desired fixed width */
+  height: auto;
+  /* Keep the aspect ratio */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-left: 50px;
+}
+
+.logo-image:hover {
+  transform: scale(1.07);
+  /* Slightly enlarge logo on hover */
+}
+
+
+header {
+  background-color: #004d40;
+
+}
+
+#logo-link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+#logo-link:hover {
+  transform: scale(1.1);
+  /* Slight hover effect */
 }

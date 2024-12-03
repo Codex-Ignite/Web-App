@@ -11,7 +11,10 @@
 <body>
 
   <header>
-    <span class="logo" id="logo">Codex Ignite Quiz</span>
+    <a href="javascript:void(0);" class="logo-link">
+      <img src="../Pictures/css-coding_2147746.png" alt="Codex Ignite Quiz Logo" id="logo" class="logo-image">
+
+    </a>
   </header>
 
   <div class="container">
@@ -82,6 +85,13 @@
     logo.addEventListener('click', () => {
       sidebar.classList.toggle('active');
       content.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
+      }
     });
   </script>
 </body>

@@ -270,15 +270,49 @@
     .profile-details input[disabled] {
       background-color: #f0f0f0;
     }
+
+    /* Styling for the logo image */
+    .logo-image {
+      width: 80px;
+      /* Set the desired fixed width */
+      height: auto;
+      /* Keep the aspect ratio */
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-left: 50px;
+    }
+
+    .logo-image:hover {
+      transform: scale(1.07);
+      /* Slightly enlarge logo on hover */
+    }
+
+
+    header {
+      background-color: #004d40;
+
+    }
+
+    #logo-link {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    #logo-link:hover {
+      transform: scale(1.1);
+      /* Slight hover effect */
+    }
   </style>
 
 </head>
 
 <body>
   <header>
-    <span class="logo" id="logo">Codex Ignite Quiz</span>
-  </header>
+    <a href="javascript:void(0);" class="logo-link">
+      <img src="../Pictures/css-coding_2147746.png" alt="Codex Ignite Quiz Logo" id="logo" class="logo-image">
 
+    </a>
+  </header>
   <div class="container">
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar" aria-hidden="true">
@@ -296,7 +330,7 @@
 
       <!-- Profile section -->
       <div class="container">
-        <img src="Person-Icon.webp" alt="Profile Picture" class="profile-img">
+        <img src="../Pictures/Person-Icon.webp" alt="Profile Picture" class="profile-img">
         <h2>Profile Details</h2>
         <div class="profile-details">
           <label for="username">Username:</label>
