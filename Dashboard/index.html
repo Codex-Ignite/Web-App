@@ -43,36 +43,50 @@
       }
     }
 
-    /* Styling for the logo image */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #004d40, #00695c);
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    #logo-link {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+    }
+
     .logo-image {
       width: 80px;
-      /* Set the desired fixed width */
       height: auto;
-      /* Keep the aspect ratio */
       cursor: pointer;
       transition: transform 0.3s ease;
-      margin-left: 50px;
+      margin-right: 10px;
+      /* Space between logo and text */
     }
 
     .logo-image:hover {
       transform: scale(1.07);
-      /* Slightly enlarge logo on hover */
     }
 
-
-    header {
-      background-color: #004d40;
-
+    .logo-text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+      color: #ffffff;
     }
 
-    #logo-link {
-      display: inline-block;
-      transition: transform 0.3s ease;
+    .logo-link:hover .logo-text {
+      color: #00bcd4;
     }
 
-    #logo-link:hover {
+    .logo-link:hover .logo-image {
       transform: scale(1.1);
-      /* Slight hover effect */
     }
 
     /* Sidebar styles */
@@ -312,9 +326,9 @@
 
 <body>
   <header>
-    <a href="javascript:void(0);" class="logo-link">
+    <a href="javascript:void(0);" class="logo-link" id="logo-link">
       <img src="../Pictures/css-coding_2147746.png" alt="Codex Ignite Quiz Logo" id="logo" class="logo-image">
-
+      <span class="logo-text">Codex Ignite</span>
     </a>
   </header>
 
