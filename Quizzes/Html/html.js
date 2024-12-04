@@ -50,7 +50,7 @@ async function displayQuestion() {
 
 // Function to start a 10-second timer
 function startTimer() {
-  let timeLeft = 10;
+  let timeLeft = 15;
   const timerElement = document.getElementById("timer");
 
   // Update the timer every second
@@ -103,8 +103,12 @@ function showResults() {
     <br>Unanswered Questions: ${unansweredQuestions}.
   `;
 
-  // Hide the quiz container and show the result container
+  // Hide the quiz container, submit button, and timer
   document.getElementById("quiz-container").style.display = "none";
+  document.getElementById("submit-btn").style.display = "none";
+  document.getElementById("timer").style.display = "none";
+
+  // Show the result container
   resultContainer.style.display = "block";
 }
 

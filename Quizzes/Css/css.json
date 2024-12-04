@@ -18,7 +18,7 @@
         "&lt;link&gt;",
         "&lt;stylesheet&gt;"
       ],
-      "answer": "&lt;link&gt;"
+      "answer": "<link>"
     },
     {
       "question": "Which property is used to change the background color in CSS?",
