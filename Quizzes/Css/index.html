@@ -5,26 +5,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>Css Quizzess</title>
+  <title>Codex Ignite Html Quiz</title>
+
+  <style>
+    
+    
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      /* Transparent white */
+      border: 3px solid #00bcd4;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: #fff;
+    }
+
+    body,
+    .quiz-item,
+    .options label {
+      color: #ffffff;
+      text-align: left;
+      font-size: 20px;
+
+    }
+
+
+    .quiz-item {
+      margin-bottom: 20px;
+    }
+
+    .options label {
+      display: block;
+      margin: 5px 0;
+      color: white;
+    }
+
+
+    button {
+      padding: 10px;
+      width: 40%;
+      background-color: #004d40;
+      color: white;
+      font-weight: bold;
+      border: 3px solid #00bcd4;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 10px auto;
+      margin-top: 30px;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00695c;
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(0, 114, 255, 0.4);
+    }
+   
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
 
 </head>
 
 <body>
-
   <header>
     <a href="javascript:void(0);" class="logo-link" id="logo-link">
-      <img src="/Pictures/css-coding_2147746.png alt="Codex Ignite Quiz Logo" id="logo" class="logo-image">
+      <img src="/Pictures/css-coding_2147746.png" alt="Codex Ignite Quiz Logo" id="logo" class="logo-image">
       <span class="logo-text">Codex Ignite</span>
     </a>
   </header>
 
   <div class="container">
- 
+    <h1>Quiz: CSS</h1>
+    <div id="quiz-container"></div>
+    <button id="submit-btn">Submit Quiz</button>
+    <div id="result"></div>
+  </div>
 
-    <h1>Css</h1>
-
+  <script src="./css.js"></script>
 </body>
-
-
 
 </html>

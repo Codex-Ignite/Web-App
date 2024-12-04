@@ -1,6 +1,6 @@
 // Function to fetch quiz data from the JSON file
 async function fetchQuizzes() {
-  const response = await fetch('css.json');
+  const response = await fetch('JavaScript.json');
   const quizData = await response.json();
   return quizData;
 }
