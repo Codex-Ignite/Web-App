@@ -43,9 +43,6 @@
       }
     }
 
-
-   
-
     /* Sidebar styles */
     .sidebar {
       width: 250px;
@@ -126,21 +123,7 @@
     }
 
     /* Container inside footer for better organization */
-    footer .container {
-      width: 80%;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Roboto', sans-serif;
-      /* Consistent font */
-      border: 1px solid #00bcd4;
-      /* Border for the footer container */
-      padding: 10px 15px;
-      border-radius: 5px;
-      /* Rounded corners for the container */
-    }
+
 
     /* Footer links */
     footer a {
@@ -166,64 +149,6 @@
       footer .container {
         flex-direction: column;
         align-items: center;
-      }
-    }
-
-
-    /* Background gradient animation */
-    @keyframes backgroundChange {
-      0% {
-        background: linear-gradient(135deg, #004d40, #00796b, #00695c);
-      }
-
-      50% {
-        background: linear-gradient(135deg, #004d40, #003c3e, #002e2c);
-      }
-
-      100% {
-        background: linear-gradient(135deg, #004d40, #00796b, #00695c);
-      }
-    }
-
-    /* Content text animations */
-    @keyframes slideUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Responsive design */
-    @media (max-width: 768px) {
-      .content.active {
-        margin-left: 0;
-      }
-
-      .sidebar {
-        width: 200px;
-      }
-
-      .sidebar ul li a {
-        font-size: 1rem;
-      }
-
-      .icon {
-        font-size: 1.2rem;
       }
     }
 
@@ -273,6 +198,87 @@
     .logo-link:hover .logo-image {
       transform: scale(1.1);
     }
+
+    /* Feedback form styling */
+    .feedback-form {
+      width: 60%;
+      /* Adjust width to make the form smaller */
+      max-width: 900px;
+      margin: 50px auto;
+      /* Center the form horizontally and vertically */
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      /* Semi-transparent background */
+      border: 2px solid #00bcd4;
+      /* Border color matching the theme */
+      border-radius: 8px;
+      /* Rounded corners */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      /* Subtle shadow effect */
+    }
+
+    .feedback-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .feedback-form label {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea {
+      width: 100%;
+      /* Make inputs full width within the form */
+      max-width: 400px;
+      /* Limit the maximum width to 400px */
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 2px solid #00bcd4;
+      border-radius: 5px;
+      background-color: transparent;
+      color: #fff;
+      font-size: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      /* Center the inputs */
+    }
+
+    .feedback-form textarea {
+      resize: vertical;
+    }
+
+    .feedback-form button {
+      background-color: #00bcd4;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 400px;
+      /* Center the button and match width of inputs */
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      /* Center the button */
+    }
+
+    .feedback-form button:hover {
+      background-color: #00838f;
+    }
+
+    .feedback-form .message {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #00bcd4;
+    }
   </style>
 </head>
 
@@ -292,32 +298,55 @@
         <li><a href="../Quizzes/"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
         <li><a href="../Results/"><i class="icon">&#x1F4C8;</i> Results</a></li>
         <li><a href="../Profile/"><i class="icon">&#x1F464;</i> Profile</a></li>
-        <li><a href="../Feedback/"><i class="icon">&#x270D;</i> Feedback</a></li> 
-        <li><a href="../AboutUs/"><i class="icon">&#x1F4C4;</i> About Us</a></li> 
-        <li><a href="../ContactUs/"><i class="icon">&#x1F4E7;</i> Contact Us</a></li>
+        <li><a href="../Feedback/"><i class="icon">&#x270D;</i> Feedback</a></li>
+        <li><a href="../AboutUs/"><i class="icon">&#x1F4C4;</i> About Us</a></li>
       </ul>
     </nav>
 
+    <!-- Content area -->
+    <div class="content">
+      <div class="feedback-form">
+        <h2>Feedback Form</h2>
+        <form id="feedbackForm">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Your Feedback:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Submit Feedback</button>
+        </form>
+        <div class="message" id="formMessage"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Codex Ignite. All rights reserved.</p>
+      <a href="../PrivacyPolicy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript to handle form submission
+    document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // Process the form data (e.g., send to server or display confirmation)
+      document.getElementById('formMessage').textContent = `Thank you for your feedback, ${name}! We'll get back to you at ${email}.`;
+
+      // Clear form fields
+      document.getElementById('feedbackForm').reset();
+    });
+  </script>
 </body>
-
-<script>
-  const logo = document.getElementById('logo');
-  const sidebar = document.getElementById('sidebar');
-  const content = document.getElementById('content');
-
-  // Toggle sidebar visibility when clicking the logo
-  logo.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    content.classList.toggle('active');
-  });
-
-  // Close sidebar when clicking anywhere outside
-  document.addEventListener('click', function (event) {
-    if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
-      sidebar.classList.remove('active');
-      content.classList.remove('active');
-    }
-  });
-</script>
 
 </html>
