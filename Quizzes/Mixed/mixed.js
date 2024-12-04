@@ -10,6 +10,19 @@ let quizzes;
 async function fetchQuizzes() {
   const response = await fetch('mixed.json');
   quizzes = await response.json();  // Store quizzes globally
+
+  // Shuffle questions for each category after fetching
+  for (const category in quizzes) {
+    shuffleArray(quizzes[category]);
+  }
+}
+
+// Shuffle function to randomize the question order
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
 }
 
 // Function to display a single quiz question
