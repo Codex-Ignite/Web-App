@@ -13,12 +13,12 @@
     {
       "question": "Which HTML tag is used to link an external CSS file?",
       "options": [
-        "<css>",
-        "<style>",
-        "<link>",
-        "<stylesheet>"
+        "&lt;css&gt;",
+        "&lt;style&gt;",
+        "&lt;link&gt;",
+        "&lt;stylesheet&gt;"
       ],
-      "answer": "<link>"
+      "answer": "&lt;link&gt;"
     },
     {
       "question": "Which property is used to change the background color in CSS?",
@@ -71,7 +71,7 @@
       "answer": "margin-left: auto; margin-right: auto;"
     },
     {
-      "question": "What is the default display property for a <div> element?",
+      "question": "What is the default display property for a &lt;div&gt; element?",
       "options": [
         "block",
         "inline",

@@ -1,15 +1,154 @@
 {
-  "CSS": [
+  "JavaScript": [
     {
-      "question": "",
+      "question": "What is the correct syntax to print a message to the console in JavaScript?",
       "options": [
-        "",
-        "",
-        "Colorful Style Sheets",
-        "Creative Style Sheets"
+        "console.print(&#39;Hello World!&#39;);",
+        "console.log(&#39;Hello World!&#39;);",
+        "log.console(&#39;Hello World!&#39;);",
+        "print.console(&#39;Hello World!&#39;);"
       ],
-      "answer": "Cascading Style Sheets"
+      "answer": "console.log(&#39;Hello World!&#39;);"
+    },
+    {
+      "question": "Which of the following is NOT a valid variable declaration in JavaScript?",
+      "options": [
+        "let x = 5;",
+        "var y = 10;",
+        "const z = 20;",
+        "number a = 15;"
+      ],
+      "answer": "number a = 15;"
+    },
+    {
+      "question": "How do you create a function in JavaScript?",
+      "options": [
+        "function myFunction() {}",
+        "func myFunction() {}",
+        "create function myFunction() {}",
+        "def myFunction() {}"
+      ],
+      "answer": "function myFunction() {}"
+    },
+    {
+      "question": "What does the typeof operator do in JavaScript?",
+      "options": [
+        "Checks if a variable is undefined",
+        "Returns the type of a variable",
+        "Converts a variable to a string",
+        "Compares two variables"
+      ],
+      "answer": "Returns the type of a variable"
+    },
+    {
+      "question": "How do you add a comment in JavaScript?",
+      "options": [
+        "# This is a comment",
+        "// This is a comment",
+        "&lt;!-- This is a comment --&gt;",
+        "/* This is a comment */"
+      ],
+      "answer": "// This is a comment"
+    },
+    {
+      "question": "What will console.log(2 + &#39;2&#39;) output in JavaScript?",
+      "options": [
+        "4",
+        "22",
+        "undefined",
+        "NaN"
+      ],
+      "answer": "22"
+    },
+    {
+      "question": "Which of the following is a JavaScript data type?",
+      "options": [
+        "string",
+        "text",
+        "integer",
+        "char"
+      ],
+      "answer": "string"
+    },
+    {
+      "question": "What is the result of Boolean(0) in JavaScript?",
+      "options": [
+        "true",
+        "false",
+        "null",
+        "undefined"
+      ],
+      "answer": "false"
+    },
+    {
+      "question": "How do you create an array in JavaScript?",
+      "options": [
+        "array = [1, 2, 3];",
+        "array = (1, 2, 3);",
+        "array = {1, 2, 3};",
+        "array = &lt;1, 2, 3&gt;;"
+      ],
+      "answer": "array = [1, 2, 3];"
+    },
+    {
+      "question": "Which of the following is the correct syntax for an if statement in JavaScript?",
+      "options": [
+        "if (x &gt; 5) {}",
+        "if x &gt; 5 then {}",
+        "if (x &gt; 5);",
+        "if x &gt; 5 {}"
+      ],
+      "answer": "if (x &gt; 5) {}"
+    },
+    {
+      "question": "What does the push() method do in JavaScript?",
+      "options": [
+        "Removes the last element from an array",
+        "Adds a new element at the beginning of an array",
+        "Adds a new element at the end of an array",
+        "Returns the last element of an array"
+      ],
+      "answer": "Adds a new element at the end of an array"
+    },
+    {
+      "question": "Which of the following methods can be used to convert a string to a number in JavaScript?",
+      "options": [
+        "parseInt()",
+        "parseFloat()",
+        "Number()",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "What does the this keyword refer to in JavaScript?",
+      "options": [
+        "The global object",
+        "The function object",
+        "The current object or context",
+        "None of the above"
+      ],
+      "answer": "The current object or context"
+    },
+    {
+      "question": "How do you write an infinite loop in JavaScript?",
+      "options": [
+        "for(;;)",
+        "while(true)",
+        "do {} while(true);",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "What is the correct way to write a JavaScript array with mixed data types?",
+      "options": [
+        "let arr = [1, &#39;Hello&#39;, true];",
+        "let arr = [1, 2, 3];",
+        "let arr = {1, &#39;Hello&#39;, true};",
+        "let arr = (1, &#39;Hello&#39;, true);"
+      ],
+      "answer": "let arr = [1, &#39;Hello&#39;, true];"
     }
-
   ]
 }
