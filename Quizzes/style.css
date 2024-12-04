@@ -13,7 +13,7 @@ p {
 body {
   background: linear-gradient(135deg, #004d40, #00796b, #00695c);
   color: #fff;
-  height: 230vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   font-size: 16px;

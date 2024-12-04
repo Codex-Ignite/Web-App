@@ -37,20 +37,30 @@ async function displayQuizzes() {
 function handleSubmit() {
   let score = 0;
   let totalQuestions = 0;
+  let unansweredQuestions = 0;  // Keep track of unanswered questions
 
   fetchQuizzes().then((quizzes) => {
     for (const category in quizzes) {
       quizzes[category].forEach((quiz, index) => {
         totalQuestions++;
         const selectedOption = document.querySelector(`input[name="quiz-${category}-${index}"]:checked`);
-        if (selectedOption && selectedOption.value === quiz.answer) {
-          score++;
+
+        // Check if an option was selected
+        if (selectedOption) {
+          if (selectedOption.value === quiz.answer) {
+            score++;  // Increase score if the answer is correct
+          }
+        } else {
+          unansweredQuestions++;  // Keep track of unanswered questions
         }
       });
     }
 
     const resultContainer = document.getElementById("result");
-    resultContainer.innerHTML = `You scored ${score} out of ${totalQuestions}.`;
+    resultContainer.innerHTML = `
+      You scored ${score} out of ${totalQuestions}.
+      <br>Unanswered Questions: ${unansweredQuestions}.
+    `;
   });
 }
 
