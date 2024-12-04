@@ -18,7 +18,7 @@
         "&lt;h6&gt;",
         "&lt;head&gt;"
       ],
-      "answer": "&lt;h1&gt;"
+      "answer": "<h1>"
     },
     {
       "question": "Which HTML element is used to define a paragraph?",
@@ -28,7 +28,7 @@
         "&lt;paragraph&gt;",
         "&lt;pr&gt;"
       ],
-      "answer": "&lt;p&gt;"
+      "answer": "<p>"
     },
     {
       "question": "Which attribute is used to specify the URL in an anchor (&lt;a&gt;) tag?",
@@ -48,7 +48,7 @@
         "&lt;img link=&quot;image.jpg&quot;&gt;",
         "&lt;img url=&quot;image.jpg&quot;&gt;"
       ],
-      "answer": "&lt;img src=&quot;image.jpg&quot;&gt;"
+      "answer": "<img src=\"image.jpg\">"
     },
     {
       "question": "What is the correct HTML for inserting a line break?",
@@ -58,7 +58,7 @@
         "&lt;lb&gt;",
         "&lt;line&gt;"
       ],
-      "answer": "&lt;br&gt;"
+      "answer": "<br>"
     },
     {
       "question": "Which HTML element is used to create an unordered list?",
@@ -68,7 +68,7 @@
         "&lt;list&gt;",
         "&lt;li&gt;"
       ],
-      "answer": "&lt;ul&gt;"
+      "answer": "<ul>"
     },
     {
       "question": "Which HTML element is used to create a form?",
@@ -78,7 +78,7 @@
         "&lt;label&gt;",
         "&lt;button&gt;"
       ],
-      "answer": "&lt;form&gt;"
+      "answer": "<form>"
     },
     {
       "question": "How do you write a comment in HTML?",
@@ -88,7 +88,7 @@
         "// Comment",
         "# Comment"
       ],
-      "answer": "&lt;!-- Comment --&gt;"
+      "answer": "<!-- Comment -->"
     },
     {
       "question": "Which declaration is used to define the document type in HTML5?",
@@ -98,7 +98,7 @@
         "&lt;DOCTYPE html&gt;",
         "&lt;doctype html&gt;"
       ],
-      "answer": "&lt;!DOCTYPE html&gt;"
+      "answer": "<!DOCTYPE html>"
     }
   ]
 }
