@@ -8,7 +8,7 @@
         "log.console(&#39;Hello World!&#39;);",
         "print.console(&#39;Hello World!&#39;);"
       ],
-      "answer": "console.log(&#39;Hello World!&#39;);"
+      "answer": "console.log('Hello World!');"
     },
     {
       "question": "Which of the following is NOT a valid variable declaration in JavaScript?",
@@ -98,7 +98,7 @@
         "if (x &gt; 5);",
         "if x &gt; 5 {}"
       ],
-      "answer": "if (x &gt; 5) {}"
+      "answer": "if (x > 5) {}"
     },
     {
       "question": "What does the push() method do in JavaScript?",
@@ -148,7 +148,7 @@
         "let arr = {1, &#39;Hello&#39;, true};",
         "let arr = (1, &#39;Hello&#39;, true);"
       ],
-      "answer": "let arr = [1, &#39;Hello&#39;, true];"
+      "answer": "let arr = [1, 'Hello', true];"
     }
   ]
 }
