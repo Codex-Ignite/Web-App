@@ -7,7 +7,11 @@
   <title>Contact Us</title>
 
   <style>
-    body, ul, li, h1, p {
+    body,
+    ul,
+    li,
+    h1,
+    p {
       margin: 0;
       padding: 0;
       list-style: none;
@@ -83,7 +87,8 @@
       gap: 15px;
     }
 
-    .contact-form input, .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
       padding: 10px;
       font-size: 1rem;
       border-radius: 5px;
@@ -102,6 +107,54 @@
       background: #004d40;
     }
 
+    /* Styling for the logo container and text */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #004d40, #00695c);
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    #logo-link {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo-image {
+      width: 80px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-right: 10px;
+      /* Space between logo and text */
+    }
+
+    .logo-image:hover {
+      transform: scale(1.07);
+    }
+
+    .logo-text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+      color: #ffffff;
+    }
+
+    .logo-link:hover .logo-text {
+      color: #00bcd4;
+    }
+
+    .logo-link:hover .logo-image {
+      transform: scale(1.1);
+    }
+
+
     /* Footer styles */
     footer {
       background: linear-gradient(180deg, #004d40, #00695c);
@@ -113,7 +166,6 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      border-top: 3px solid #00bcd4;
       box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
     }
 
@@ -166,10 +218,9 @@
   </div>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2024 Codex Ignite. All rights reserved.</p>
-      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-    </div>
+
+    <span>&copy; 2024 Codex Ignite Quiz - Empowering Future IT Professionals</span>
+    <a href="#">Privacy Policy</a>
   </footer>
 
   <script>

@@ -18,12 +18,10 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Body styles */
     body {
       background: linear-gradient(135deg, #004d40, #00796b, #00695c);
-      /* Darker Teal to Aqua gradient */
       color: #fff;
-      height: 100vh;
+      height: 200vh;
       display: flex;
       flex-direction: column;
       font-size: 16px;
@@ -43,12 +41,10 @@
       }
     }
 
-    /* Sidebar styles */
     .sidebar {
       width: 250px;
       height: 100%;
       background: linear-gradient(180deg, #00796b, #004d40);
-      /* Darker Teal for sidebar */
       color: #fff;
       position: fixed;
       top: 0;
@@ -71,7 +67,6 @@
 
     .sidebar ul li:hover {
       transform: translateX(10px);
-      /* Subtle animation for sidebar items */
     }
 
     .sidebar ul li a {
@@ -79,31 +74,154 @@
       color: #fff;
       font-size: 1.2rem;
       font-family: 'Roboto', sans-serif;
-      /* Uniform font for sidebar */
       transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .sidebar ul li a:hover {
       color: #00bcd4;
-      /* Aqua hover effect */
       transform: translateX(10px);
     }
 
-    /* Icons for links */
     .icon {
       font-size: 1.5rem;
     }
 
-    /* Sidebar active state */
     .sidebar.active {
       left: 0;
+    }
+
+    .content {
+      margin-left: 0;
+      transition: margin-left 0.4s ease;
     }
 
     .content.active {
       margin-left: 250px;
     }
 
-    /* Footer styles */
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #004d40, #00695c);
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    #logo-link {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo-image {
+      width: 80px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-right: 10px;
+    }
+
+    .logo-image:hover {
+      transform: scale(1.07);
+    }
+
+    .logo-text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+      color: #ffffff;
+    }
+
+    .logo-link:hover .logo-text {
+      color: #00bcd4;
+    }
+
+    .about-us {
+      margin: 60px 20px 80px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+    }
+
+    .about-us h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about-us p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    @keyframes containerAnimation {
+      0% {
+        transform: scale(1);
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+      }
+
+      50% {
+        transform: scale(1.05);
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      }
+
+      100% {
+        transform: scale(1);
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+      }
+    }
+
+    .team-member {
+      margin: 60px auto;
+      padding: 20px;
+      background-color: transparent;
+      border-radius: 8px;
+      animation: containerAnimation 7s infinite ease-in-out;
+      transition: all 0.5s ease;
+    }
+
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
+
+    .team-member {
+      background-color: transparent;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      text-align: center;
+      width: 200px;
+    }
+
+    .team-member img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .team-member h2 {
+      margin-top: 15px;
+      font-size: 1.5rem;
+    }
+
+    .team-member p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
     footer {
       background: linear-gradient(180deg, #004d40, #00695c);
       /* Darker Teal for footer */
@@ -131,9 +249,6 @@
       justify-content: space-between;
       align-items: center;
       font-family: 'Roboto', sans-serif;
-      /* Consistent font */
-      border: 1px solid #00bcd4;
-      /* Border for the footer container */
       padding: 10px 15px;
       border-radius: 5px;
       /* Rounded corners for the container */
@@ -165,136 +280,6 @@
         align-items: center;
       }
     }
-
-    /* Styling for the logo container and text */
-    header {
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      background: linear-gradient(90deg, #004d40, #00695c);
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      position: relative;
-    }
-
-    #logo-link {
-      display: flex;
-      align-items: center;
-      color: white;
-      text-decoration: none;
-    }
-
-    .logo-image {
-      width: 80px;
-      height: auto;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      margin-right: 10px;
-      /* Space between logo and text */
-    }
-
-    .logo-image:hover {
-      transform: scale(1.07);
-    }
-
-    .logo-text {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.8rem;
-      transition: color 0.3s ease;
-      color: #ffffff;
-    }
-
-    .logo-link:hover .logo-text {
-      color: #00bcd4;
-    }
-
-    .logo-link:hover .logo-image {
-      transform: scale(1.1);
-    }
-
-    /* About Us Section */
-    .about-us {
-      margin: 60px 20px 80px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 8px;
-    }
-
-    .about-us h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .about-us p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      text-align: center;
-    }
-    /* Container animation styles */
-    @keyframes containerAnimation {
-      0% {
-          transform: scale(1);
-          background: rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-      }
-      50% {
-          transform: scale(1.05);
-          background: rgba(0, 0, 0, 0.8);
-          box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-      }
-      100% {
-          transform: scale(1);
-          background: rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-      }
-  }
-
-  /* Apply animation to the container */
-  .team-member {
-      margin: 60px auto;
-      padding: 20px;
-      background-color: transparent;
-      border-radius: 8px;
-      animation: containerAnimation 7s infinite ease-in-out;
-      transition: all 0.5s ease;
-  }
-  
-
-    .team {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin-top: 40px;
-    }
-
-    .team-member {
-      background-color: transparent;
-      border-radius: 8px;
-      padding: 15px;
-      margin: 10px;
-      text-align: center;
-      width: 200px;
-    }
-
-    .team-member img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    .team-member h2 {
-      margin-top: 15px;
-      font-size: 1.5rem;
-    }
-
-    .team-member p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-    }
-
   </style>
 </head>
 
@@ -306,9 +291,8 @@
     </a>
   </header>
 
-  <div class="container">
-    <!-- Sidebar -->
-    <nav class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="content" id="content">
+    <nav class="sidebar" id="sidebar">
       <ul>
         <li><a href="index.html"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
         <li><a href="../Quizzes/"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
@@ -320,46 +304,62 @@
       </ul>
     </nav>
 
-    <!-- About Us Content -->
     <div class="about-us">
       <h1>About Us</h1>
-      <p>We are a team of four passionate IT students working on the "Codex Ignite Quiz" platform, designed to help students improve their coding skills and knowledge in various IT-related topics.</p>
-
-      <div class="team">
-        <div class="team-member">
-          <img src="member1.jpg" alt="Member 1">
-          <h2>Member 1</h2>
-          <p>Role: Developer</p>
-          <p>Short Bio: Passionate about web development and creating user-friendly applications.</p>
-        </div>
-        <div class="team-member">
-          <img src="https://scontent.fmnl14-1.fna.fbcdn.net/v/t39.30808-6/419593927_1593680801431304_1831590360947821804_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFBux5UuwPKhtalKIqcg8Ix62TlL74F1i7rZOUvvgXWLgh6rFxni5YuxzZSQEtyDbpFR9h1eCmIBQRFDDNbF4wc&_nc_ohc=Wqxnp7HmyB4Q7kNvgFqmC-T&_nc_zt=23&_nc_ht=scontent.fmnl14-1.fna&_nc_gid=AQGBcgDF1M8cd7ZSwhBQuwd&oh=00_AYA-5axHJJiwjdwOHM9oHSBG4Xxq-8IpRGZnHsdICr-wYQ&oe=6756E8B0" alt="Member 2">
-          <h2>Member 2</h2>
-          <p>Role: Designer</p>
-          <p>Short Bio: Loves creating visually appealing and intuitive user interfaces.</p>
-        </div>
-        <div class="team-member">
-          <img src="member3.jpg" alt="Member 3">
-          <h2>Member 3</h2>
-          <p>Role: Tester</p>
-          <p>Short Bio: Focuses on ensuring the platform is bug-free and user-friendly.</p>
-        </div>
-        <div class="team-member">
-          <img src="member4.jpg" alt="Member 4">
-          <h2>Member 4</h2>
-          <p>Role: Project Manager</p>
-          <p>Short Bio: Coordinates the team and makes sure everything stays on track.</p>
-        </div>
-      </div>
+      <p>Welcome to Codex Ignite Quiz! We are dedicated to providing an interactive and engaging platform for students
+        and IT enthusiasts to enhance their skills in HTML, CSS, JavaScript, and other related technologies.</p>
     </div>
+
+    <section class="team">
+      <div class="team-member">
+        <img src="./Person-Icon.webp" alt="Team Member 1">
+        <h2>Kent Ryan L. Pagongpong</h2>
+        <p>Lead Developer</p>
+      </div>
+      <div class="team-member">
+        <img src="./Person-Icon.webp" alt="Team Member 2">
+        <h2>Rainiel Jevson Bernales</h2>
+        <p>UI/UX Designer</p>
+      </div>
+      <div class="team-member">
+        <img src="./Person-Icon.webp" alt="Team Member 3">
+        <h2>Joshua Eviota</h2>
+        <p>Back-End Developer</p>
+      </div>
+      <div class="team-member">
+        <img src="./Person-Icon.webp" alt="Team Member 4">
+        <h2>Rusell Jay L. Ching</h2>
+        <p>Front-End Developer</p>
+      </div>
+    </section>
   </div>
 
   <footer>
     <div class="container">
-      <p>&copy; 2024 Codex Ignite Quiz. All Rights Reserved.</p>
-      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      <p>&copy; 2024 Codex Ignite. All rights reserved.</p>
+      <a href="../PrivacyPolicy/">Privacy Policy</a>
     </div>
   </footer>
+
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const content = document.getElementById("content");
+    const logoLink = document.getElementById("logo-link");
+
+    // Toggle sidebar visibility when clicking the logo
+    logo.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      content.classList.toggle('active');
+    });
+
+    // Close sidebar when clicking anywhere outside
+    document.addEventListener('click', function (event) {
+      if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 
 </html>
