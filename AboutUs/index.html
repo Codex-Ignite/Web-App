@@ -230,7 +230,37 @@
     .about-us p {
       font-size: 1.1rem;
       line-height: 1.6;
+      text-align: center;
     }
+    /* Container animation styles */
+    @keyframes containerAnimation {
+      0% {
+          transform: scale(1);
+          background: rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+      }
+      50% {
+          transform: scale(1.05);
+          background: rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      }
+      100% {
+          transform: scale(1);
+          background: rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+      }
+  }
+
+  /* Apply animation to the container */
+  .team-member {
+      margin: 60px auto;
+      padding: 20px;
+      background-color: transparent;
+      border-radius: 8px;
+      animation: containerAnimation 7s infinite ease-in-out;
+      transition: all 0.5s ease;
+  }
+  
 
     .team {
       display: flex;
@@ -240,7 +270,7 @@
     }
 
     .team-member {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: transparent;
       border-radius: 8px;
       padding: 15px;
       margin: 10px;
@@ -303,7 +333,7 @@
           <p>Short Bio: Passionate about web development and creating user-friendly applications.</p>
         </div>
         <div class="team-member">
-          <img src="member2.jpg" alt="Member 2">
+          <img src="https://scontent.fmnl14-1.fna.fbcdn.net/v/t39.30808-6/419593927_1593680801431304_1831590360947821804_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFBux5UuwPKhtalKIqcg8Ix62TlL74F1i7rZOUvvgXWLgh6rFxni5YuxzZSQEtyDbpFR9h1eCmIBQRFDDNbF4wc&_nc_ohc=Wqxnp7HmyB4Q7kNvgFqmC-T&_nc_zt=23&_nc_ht=scontent.fmnl14-1.fna&_nc_gid=AQGBcgDF1M8cd7ZSwhBQuwd&oh=00_AYA-5axHJJiwjdwOHM9oHSBG4Xxq-8IpRGZnHsdICr-wYQ&oe=6756E8B0" alt="Member 2">
           <h2>Member 2</h2>
           <p>Role: Designer</p>
           <p>Short Bio: Loves creating visually appealing and intuitive user interfaces.</p>
