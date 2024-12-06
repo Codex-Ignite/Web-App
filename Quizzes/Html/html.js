@@ -61,7 +61,7 @@ async function displayQuestion() {
   document.getElementById("submit-btn").addEventListener("click", handleSubmit);
 }
 
-// Function to start a 10-second timer
+// Function to start a 15-second timer
 function startTimer() {
   let timeLeft = 15;
   const timerElement = document.getElementById("timer");
@@ -80,10 +80,18 @@ function startTimer() {
 // Function to move to the next question
 function nextQuestion() {
   currentQuestionIndex++;
-  if (currentQuestionIndex < quizzes.HTML.length) { // Ensure total questions are handled dynamically
+  if (currentQuestionIndex < quizzes.HTML.length) {
     displayQuestion();
   } else {
-    showResults();
+    // Save the quiz results to localStorage
+    localStorage.setItem('quizResults', JSON.stringify({
+      score: score,
+      totalQuestions: totalQuestions,
+      unansweredQuestions: unansweredQuestions
+    }));
+
+    // Redirect to the results page
+    window.location.href = 'results.html'; // This will navigate to results.html page
   }
 }
 
@@ -108,22 +116,23 @@ async function handleSubmit() {
   nextQuestion();
 }
 
-// Function to display the final result
-function showResults() {
-  const resultContainer = document.getElementById("result");
-  resultContainer.innerHTML = `
-    You scored ${score} out of ${totalQuestions}.
-    <br>Unanswered Questions: ${unansweredQuestions}.
-  `;
-
-  // Hide the quiz container, submit button, and timer
-  document.getElementById("quiz-container").style.display = "none";
-  document.getElementById("submit-btn").style.display = "none";
-  document.getElementById("timer").style.display = "none";
-
-  // Show the result container
-  resultContainer.style.display = "block";
-}
-
 // Initialize quiz display
 fetchQuizzes().then(() => displayQuestion());
+
+const logo = document.getElementById('logo');
+const sidebar = document.getElementById('sidebar');
+const content = document.getElementById('content');
+
+// Toggle sidebar visibility when clicking the logo
+logo.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  content.classList.toggle('active');
+});
+
+// Close sidebar when clicking anywhere outside
+document.addEventListener('click', function (event) {
+  if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+    sidebar.classList.remove('active');
+    content.classList.remove('active');
+  }
+});
