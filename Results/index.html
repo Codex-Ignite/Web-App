@@ -348,7 +348,7 @@
       <h2>CSS Quiz Results</h2>
       <div id="css-results-container"></div>
     <button onclick="window.location.href='../Quizzes/Css/index.html';">Go Back to Quiz</button>
-    <button onclick="clearResults()">Clear Results</button>
+    <button onclick="clearCssResults()">Clear Results</button>
 
 
   </div>
@@ -358,7 +358,7 @@
     <div id="js-results-container"></div>
 
   <button onclick="window.location.href='../Quizzes/JavaScript/index.html';">Go Back to Quiz</button>
-  <button onclick="clearResults()">Clear Results</button>
+  <button onclick="clearJsResults()">Clear Results</button>
   </div>
 
   <div class="Results-Container">
@@ -366,7 +366,7 @@
     <div id="mixed-results-container"></div>
    
     <button onclick="window.location.href='../Quizzes/Mixed/index.html';">Go Back to Quiz</button>
-    <button onclick="clearResults()">Clear Results</button>
+    <button onclick="clearMixedResults()">Clear Results</button>
 
   </div>
 
@@ -390,7 +390,7 @@
       `;
     } else {
       const resultsContainer = document.getElementById('results-container');
-      resultsContainer.innerHTML = `<p>Error: No quiz results found. Please take the quiz first.</p>`;
+      resultsContainer.innerHTML = `<p>Error: No quiz results found for HTML Quiz. Please take the quiz first.</p>`;
     }
 
     function clearResults() {
