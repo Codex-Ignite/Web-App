@@ -23,7 +23,7 @@
       background: linear-gradient(135deg, #004d40, #00796b, #00695c);
       /* Darker Teal to Aqua gradient */
       color: #fff;
-      height: 100vh;
+      height: 120vh;
       display: flex;
       flex-direction: column;
       font-size: 16px;
@@ -122,7 +122,6 @@
       transition: background 0.3s ease;
     }
 
-    /* Container inside footer for better organization */
 
 
     /* Footer links */
@@ -327,11 +326,27 @@
   <footer>
     <div class="container">
       <p>&copy; 2024 Codex Ignite. All rights reserved.</p>
-      <a href="../PrivacyPolicy/">Privacy Policy</a>
     </div>
   </footer>
 
   <script>
+    const logo = document.getElementById('logo');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+
+    // Toggle sidebar visibility when clicking the logo
+    logo.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      content.classList.toggle('active');
+    });
+
+    // Close sidebar when clicking anywhere outside
+    document.addEventListener('click', function (event) {
+      if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
+      }
+    });
     // JavaScript to handle form submission
     document.getElementById('feedbackForm').addEventListener('submit', function (event) {
       event.preventDefault();

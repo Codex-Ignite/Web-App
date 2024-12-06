@@ -28,7 +28,6 @@ body {
   /* Keep the aspect ratio */
   cursor: pointer;
   transition: transform 0.3s ease;
-  margin-left: 50px;
 }
 
 .logo-image:hover {
