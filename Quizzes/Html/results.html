@@ -4,16 +4,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style.css">
   <title>Quiz Results</title>
 
   <style>
+    body,
+    ul,
+    li,
+    h1,
+    p {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body styles */
     body {
-      font-family: Arial, sans-serif;
-      color: #ffffff;
-      background-color: #1c1c1c;
-      text-align: center;
-      padding: 50px;
+      background: linear-gradient(135deg, #004d40, #00796b, #00695c);
+      color: #fff;
+      height: 120vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+    }
+
+    @keyframes backgroundChange {
+      0% {
+        background: linear-gradient(135deg, #004d40, #00796b, #00695c);
+      }
+
+      50% {
+        background: linear-gradient(135deg, #004d40, #003c3e, #002e2c);
+      }
+
+      100% {
+        background: linear-gradient(135deg, #004d40, #00796b, #00695c);
+      }
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #004d40, #00695c);
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    #logo-link {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo-image {
+      width: 80px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-right: 10px;
     }
 
     .result-container {
@@ -25,6 +77,7 @@
       display: inline-block;
       color: #fff;
       margin-top: 30px;
+      text-align: center;
     }
 
     h1 {
@@ -88,7 +141,7 @@
 
     // Function to go back to the quiz page
     function goBack() {
-      window.location.href = 'index.html';  // Change 'index.html' to your quiz page URL
+      window.location.href = '../index.html';  // Change 'index.html' to your quiz page URL
     }
   </script>
 </body>
