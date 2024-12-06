@@ -33,6 +33,7 @@
       width: 250px;
       height: 100%;
       background: linear-gradient(180deg, #00796b, #004d40);
+      /* Darker Teal for sidebar */
       color: #fff;
       position: fixed;
       top: 0;
@@ -50,21 +51,41 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      transition: transform 0.3s ease;
     }
+
+    .sidebar ul li:hover {
+      transform: translateX(10px);
+      /* Subtle animation for sidebar items */
+    }
+
+    /* Sidebar active state */
+    .sidebar.active {
+      left: 0;
+    }
+
 
     .sidebar ul li a {
       text-decoration: none;
       color: #fff;
       font-size: 1.2rem;
+      font-family: 'Roboto', sans-serif;
+      /* Uniform font for sidebar */
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
-    .sidebar.active {
-      left: 0;
+    .sidebar ul li a:hover {
+      color: #00bcd4;
+      /* Aqua hover effect */
+      transform: translateX(10px);
     }
 
-    .content.active {
-      margin-left: 250px;
+    /* Icons for links */
+    .icon {
+      font-size: 1.5rem;
     }
+
+
 
     /* Contact form styles */
     .contact-container {
@@ -155,9 +176,9 @@
     }
 
 
-    /* Footer styles */
     footer {
       background: linear-gradient(180deg, #004d40, #00695c);
+      /* Darker Teal for footer */
       padding: 20px 0;
       color: #ecf0f1;
       font-size: 1rem;
@@ -166,12 +187,31 @@
       bottom: 0;
       left: 0;
       width: 100%;
+      border-top: 3px solid #00bcd4;
+      /* Visible border on top */
       box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+      /* Shadow for a lifted effect */
+      transition: background 0.3s ease;
     }
 
+    /* Container inside footer for better organization */
+    footer .container {
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Roboto', sans-serif;
+      padding: 10px 15px;
+      border-radius: 5px;
+      /* Rounded corners for the container */
+    }
+
+    /* Footer links */
     footer a {
       text-decoration: none;
       color: #00bcd4;
+      /* Aqua color for footer links */
       font-weight: bold;
       transition: color 0.3s ease;
     }
@@ -179,6 +219,7 @@
     footer a:hover {
       text-decoration: underline;
       color: #ff4081;
+      /* Pinkish hover effect */
     }
   </style>
 </head>
@@ -195,7 +236,7 @@
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar" aria-hidden="true">
       <ul>
-        <li><a href="index.html"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
+        <li><a href="../Dashboard/"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
         <li><a href="../Quizzes/"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
         <li><a href="../Results/"><i class="icon">&#x1F4C8;</i> Results</a></li>
         <li><a href="../Profile/"><i class="icon">&#x1F464;</i> Profile</a></li>
@@ -220,13 +261,12 @@
   <footer>
 
     <span>&copy; 2024 Codex Ignite Quiz - Empowering Future IT Professionals</span>
-    <a href="#">Privacy Policy</a>
   </footer>
 
   <script>
-    const logo = document.getElementById('logo');
-    const sidebar = document.getElementById('sidebar');
-    const content = document.getElementById('content');
+    const sidebar = document.getElementById("sidebar");
+    const content = document.getElementById("content");
+    const logoLink = document.getElementById("logo-link");
 
     // Toggle sidebar visibility when clicking the logo
     logo.addEventListener('click', () => {
