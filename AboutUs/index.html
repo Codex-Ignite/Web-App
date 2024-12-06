@@ -7,7 +7,11 @@
   <title>About Us</title>
 
   <style>
-    body, ul, li, h1, p {
+    body,
+    ul,
+    li,
+    h1,
+    p {
       margin: 0;
       padding: 0;
       list-style: none;
@@ -17,8 +21,24 @@
     body {
       background: linear-gradient(135deg, #004d40, #00796b, #00695c);
       color: #fff;
-      min-height: 100vh;
+      height: 150vh;
+      display: flex;
+      flex-direction: column;
       font-size: 16px;
+    }
+
+    @keyframes backgroundChange {
+      0% {
+        background: linear-gradient(135deg, #004d40, #00796b, #00695c);
+      }
+
+      50% {
+        background: linear-gradient(135deg, #004d40, #003c3e, #002e2c);
+      }
+
+      100% {
+        background: linear-gradient(135deg, #004d40, #00796b, #00695c);
+      }
     }
 
     .sidebar {
@@ -45,6 +65,10 @@
       transition: transform 0.3s ease;
     }
 
+    .sidebar ul li:hover {
+      transform: translateX(10px);
+    }
+
     .sidebar ul li a {
       text-decoration: none;
       color: #fff;
@@ -55,6 +79,7 @@
 
     .sidebar ul li a:hover {
       color: #00bcd4;
+      transform: translateX(10px);
     }
 
     .icon {
@@ -73,6 +98,7 @@
     .content.active {
       margin-left: 250px;
     }
+
 
     header {
       display: flex;
@@ -96,13 +122,23 @@
       width: 80px;
       height: auto;
       cursor: pointer;
+      transition: transform 0.3s ease;
       margin-right: 10px;
+    }
+
+    .logo-image:hover {
+      transform: scale(1.07);
     }
 
     .logo-text {
       font-family: 'Roboto', sans-serif;
       font-size: 1.8rem;
+      transition: color 0.3s ease;
       color: #ffffff;
+    }
+
+    .logo-link:hover .logo-text {
+      color: #00bcd4;
     }
 
     .about-us {
@@ -124,6 +160,35 @@
       text-align: center;
     }
 
+    @keyframes containerAnimation {
+      0% {
+        transform: scale(1);
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+      }
+
+      50% {
+        transform: scale(1.05);
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      }
+
+      100% {
+        transform: scale(1);
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+      }
+    }
+
+    .team-member {
+      margin: 60px auto;
+      padding: 20px;
+      background-color: transparent;
+      border-radius: 10px;
+      animation: containerAnimation 7s infinite ease-in-out;
+      transition: all 0.5s ease;
+    }
+
     .team {
       display: flex;
       flex-wrap: wrap;
@@ -132,17 +197,12 @@
     }
 
     .team-member {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: transparent;
       border-radius: 8px;
       padding: 15px;
       margin: 10px;
       text-align: center;
       width: 200px;
-      transition: transform 0.3s ease;
-    }
-
-    .team-member:hover {
-      transform: scale(1.05);
     }
 
     .team-member img {
@@ -164,6 +224,7 @@
 
     footer {
       background: linear-gradient(180deg, #004d40, #00695c);
+      /* Darker Teal for footer */
       padding: 20px 0;
       color: #ecf0f1;
       font-size: 1rem;
@@ -173,23 +234,49 @@
       left: 0;
       width: 100%;
       border-top: 3px solid #00bcd4;
+      /* Visible border on top */
       box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+      /* Shadow for a lifted effect */
+      transition: background 0.3s ease;
     }
 
+    /* Container inside footer for better organization */
+    footer .container {
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Roboto', sans-serif;
+      padding: 10px 15px;
+      border-radius: 5px;
+      /* Rounded corners for the container */
+    }
+
+    /* Footer links */
     footer a {
       text-decoration: none;
       color: #00bcd4;
+      /* Aqua color for footer links */
       font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     footer a:hover {
       text-decoration: underline;
       color: #ff4081;
+      /* Pinkish hover effect */
     }
 
+    /* Responsive design for footer */
     @media (max-width: 768px) {
       footer {
         font-size: 0.9rem;
+      }
+
+      footer .container {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -216,53 +303,65 @@
       </ul>
     </nav>
 
-    <div class="about-us">
-      <h1>About Us</h1>
-      <p>Welcome to Codex Ignite Quiz! Our mission is to provide an engaging, interactive learning platform designed to help students and IT enthusiasts sharpen their skills in essential web technologies such as HTML, CSS, JavaScript, and more. Whether you're preparing for exams, building your portfolio, or simply curious about web development, Codex Ignite offers a fun, challenging, and rewarding way to learn.</p>
-      <p>Our team consists of passionate developers and designers who are committed to creating a seamless experience for users, from intuitive interfaces to robust backend solutions. We're here to help you ignite your coding journey!</p>
-    </div>
-    
-    <section class="team">
-      <div class="team-member">
-        <img src="./Person-Icon.webp" alt="Kent Ryan L. Pagongpong">
-        <h2>Kent Ryan L. Pagongpong</h2>
-        <p>Lead Developer</p>
-      </div>
+   <div class="about-us">
+  <h1>About Us</h1>
+  <p>Welcome to Codex Ignite Quiz! Our mission is to provide an engaging, interactive learning platform designed to help students and IT enthusiasts sharpen their skills in essential web technologies such as HTML, CSS, JavaScript, and more. Whether you're preparing for exams, building your portfolio, or simply curious about web development, Codex Ignite offers a fun, challenging, and rewarding way to learn.</p>
+  <p>Our team consists of passionate developers and designers who are committed to creating a seamless experience for users, from intuitive interfaces to robust backend solutions. We're here to help you ignite your coding journey!</p>
+</div>
 
-      <div class="team-member">
-        <img src="./Person-Icon.webp" alt="Rainiel Jevson Bernales">
-        <h2>Rainiel Jevson Bernales</h2>
-        <p>UI/UX Designer</p>
-      </div>
-
-      <div class="team-member">
-        <img src="./Person-Icon.webp" alt="Joshua Eviota">
-        <h2>Joshua Eviota</h2>
-        <p>Back-End Developer</p>
-      </div>
-
-      <div class="team-member">
-        <img src="./Person-Icon.webp" alt="Rusell Jay L. Ching">
-        <h2>Rusell Jay L. Ching</h2>
-        <p>Front-End Developer</p>
-      </div>
-    </section>
+<section class="team">
+  <div class="team-member">
+    <img src="./Person-Icon.webp" alt="Kent Ryan L. Pagongpong">
+    <h3>Kent Ryan L. Pagongpong</h3>
+    <h4>Lead Developer</h4>
+    <p>Kent is the driving force behind Codex Ignite Quiz, overseeing the development 
+      and ensuring the platform runs smoothly.</p>
   </div>
+  <div class="team-member">
+    <img src="./Person-Icon.webp" alt="Rainiel Jevson Bernales">
+    <h3>Rainiel Jevson Bernales</h3>
+    <h4>UI/UX Designer</h4>
+    <p>Rainiel brings creativity and a user-centered approach to Codex Ignite Quiz. </p>
+  </div>
+  <div class="team-member">
+    <img src="./Person-Icon.webp" alt="Joshua Eviota">
+    <h3>Joshua Eviota</h3>
+    <h4>Back-End Developer</h4>
+    <p>Joshua manages the server-side functionality, making sure the platform remains fast, reliable, and scalable.</p>
+  </div>
+  <div class="team-member">
+    <img src="./Person-Icon.webp" alt="Rusell Jay L. Ching">
+    <h4>Rusell Jay L. Ching</h4>
+    <p>Front-End Developer</p>
+    <p>Rusell is the one who brings the visual designs to life. He focuses on creating responsive, 
+      interactive elements that make learning on Codex Ignite Quiz engaging and dynamic.</p>
+  </div>
+</section>
+
 
   <footer>
-    <p>&copy; 2024 Codex Ignite. All Rights Reserved.</p>
-    <p>Connect with us on <a href="https://github.com/Codex-Ignite">GitHub</a>.</p>
-
+    <div class="container">
+      <p>&copy; 2024 Codex Ignite. All rights reserved.</p>
+    </div> 
   </footer>
 
   <script>
-    const logoLink = document.getElementById('logo-link');
-    const sidebar = document.getElementById('sidebar');
-    const content = document.getElementById('content');
+    const sidebar = document.getElementById("sidebar");
+    const content = document.getElementById("content");
+    const logoLink = document.getElementById("logo-link");
 
-    logoLink.addEventListener('click', function() {
+    // Toggle sidebar visibility when clicking the logo
+    logo.addEventListener('click', () => {
       sidebar.classList.toggle('active');
       content.classList.toggle('active');
+    });
+
+    // Close sidebar when clicking anywhere outside
+    document.addEventListener('click', function (event) {
+      if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
+      }
     });
   </script>
 </body>
