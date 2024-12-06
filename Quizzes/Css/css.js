@@ -116,6 +116,7 @@ function showResults() {
     <br>Unanswered Questions: ${unansweredQuestions}.
   `;
 
+  
   // Hide the quiz container, submit button, and timer
   document.getElementById("quiz-container").style.display = "none";
   document.getElementById("submit-btn").style.display = "none";
