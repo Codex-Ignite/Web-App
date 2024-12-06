@@ -32,7 +32,7 @@ async function displayQuestion() {
   }
 
   const quizContainer = document.getElementById("quiz-container");
-  const category = "HTML";  // Use HTML category for this example
+  const category = "Mixed";  // Use HTML category for this example
 
   // Ensure the category exists and quiz for the current index exists
   if (quizzes[category] && quizzes[category][currentQuestionIndex]) {
