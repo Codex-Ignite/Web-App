@@ -22,7 +22,7 @@
     body {
       background: linear-gradient(135deg, #004d40, #00796b, #00695c);
       color: #fff;
-      height: 150vh;
+      height: 165vh;
       display: flex;
       flex-direction: column;
       font-size: 16px;
@@ -213,9 +213,49 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       text-align: center;
       margin-left: 500px;
-      
+
     }
+
     .results-Container {
+      width: 80%;
+      max-width: 500px;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid #00bcd4;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      display: list-item;
+    }
+
+    .css-results-container {
+      width: 80%;
+      max-width: 500px;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid #00bcd4;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      display: list-item;
+    }
+
+    .js-results-container {
+      width: 80%;
+      max-width: 500px;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid #00bcd4;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      display: list-item;
+    }
+
+    .mixed-results-container {
       width: 80%;
       max-width: 500px;
       margin: 20px 0;
@@ -234,6 +274,7 @@
       color: #00bcd4;
       margin-bottom: 20px;
     }
+
     .score {
       font-size: 1.5rem;
       font-weight: bold;
@@ -305,75 +346,132 @@
 
     <div class="Results-Container">
       <h2>CSS Quiz Results</h2>
-      <div id="results-container">
-      </div>
-      <button onclick="window.location.href='../Quizzes/Html/index.html';">Go Back to Quiz</button>
-      <button onclick="clearResults()">Clear Results</button>
+      <div id="css-results-container"></div>
+    <button onclick="window.location.href='../Quizzes/Css/index.html';">Go Back to Quiz</button>
+    <button onclick="clearResults()">Clear Results</button>
 
+
+  </div>
+
+  <div class="Results-Container">
+    <h2>JavaScript Quiz Results</h2>
+    <div id="js-results-container"></div>
+
+  <button onclick="window.location.href='../Quizzes/JavaScript/index.html';">Go Back to Quiz</button>
+  <button onclick="clearResults()">Clear Results</button>
+  </div>
+
+  <div class="Results-Container">
+    <h2>Mixed Quiz Results</h2>
+    <div id="mixed-results-container"></div>
+   
+    <button onclick="window.location.href='../Quizzes/Mixed/index.html';">Go Back to Quiz</button>
+    <button onclick="clearResults()">Clear Results</button>
+
+  </div>
+
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Codex Ignite Quiz. All Rights Reserved.</p>
+      <p>Connect with us on <a href="https://github.com/Codex-Ignite">GitHub</a>.</p>
 
     </div>
-    <div class="Results-Container">
-      <h2>JavaScript Quiz Results</h2>
-      <div id="results-container">
-      </div>
-      <button onclick="window.location.href='../Quizzes/Html/index.html';">Go Back to Quiz</button>
-      <button onclick="clearResults()">Clear Results</button>
-    </div>
+  </footer>
 
-    <div class="Results-Container">
-      <h2>Mixed Quiz Results</h2>
-      <div id="results-container">
-      </div>
-      <button onclick="window.location.href='../Quizzes/Html/index.html';">Go Back to Quiz</button>
-      <button onclick="clearResults()">Clear Results</button>
+  <script>
+    const results = JSON.parse(localStorage.getItem('quizResults'));
 
-    </div>
-
-
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 Codex Ignite Quiz. All Rights Reserved.</p>
-        <p>Connect with us on <a href="https://github.com/Codex-Ignite">GitHub</a>.</p>
-
-      </div>
-    </footer>
-
-    <script>
-      const results = JSON.parse(localStorage.getItem('quizResults'));
-
-      if (results) {
-        const resultsContainer = document.getElementById('results-container');
-        resultsContainer.innerHTML = `
+    if (results) {
+      const resultsContainer = document.getElementById('results-container');
+      resultsContainer.innerHTML = `
         <p>You scored <strong>${results.score}</strong> out of <strong>${results.totalQuestions}</strong> questions.</p>
         <p>Unanswered Questions: <strong>${results.unansweredQuestions}</strong>.</p>
       `;
-      } else {
-        const resultsContainer = document.getElementById('results-container');
-        resultsContainer.innerHTML = `<p>Error: No quiz results found. Please take the quiz first.</p>`;
+    } else {
+      const resultsContainer = document.getElementById('results-container');
+      resultsContainer.innerHTML = `<p>Error: No quiz results found. Please take the quiz first.</p>`;
+    }
+
+    function clearResults() {
+      localStorage.removeItem('quizResults');
+      window.location.reload();
+    }
+
+    const cssResults = JSON.parse(localStorage.getItem('cssQuizResults'));
+
+    if (cssResults) {
+      const cssResultsContainer = document.getElementById('css-results-container');
+      cssResultsContainer.innerHTML = `
+    <p>You scored <strong>${cssResults.score}</strong> out of <strong>${cssResults.totalQuestions}</strong> questions.</p>
+    <p>Unanswered Questions: <strong>${cssResults.unansweredQuestions}</strong>.</p>
+  `;
+    } else {
+      const cssResultsContainer = document.getElementById('css-results-container');
+      cssResultsContainer.innerHTML = `<p>Error: No quiz results found for the CSS Quiz. Please take the quiz first.</p>`;
+    }
+
+    function clearCssResults() {
+      localStorage.removeItem('cssQuizResults');
+      window.location.reload();
+    }
+
+    const jsResults = JSON.parse(localStorage.getItem('jsQuizResults'));
+
+    if (jsResults) {
+      const jsResultsContainer = document.getElementById('js-results-container');
+      jsResultsContainer.innerHTML = `
+    <p>You scored <strong>${jsResults.score}</strong> out of <strong>${jsResults.totalQuestions}</strong> questions.</p>
+    <p>Unanswered Questions: <strong>${jsResults.unansweredQuestions}</strong>.</p>
+  `;
+    } else {
+      const jsResultsContainer = document.getElementById('js-results-container');
+      jsResultsContainer.innerHTML = `<p>Error: No quiz results found for the JavaScript Quiz. Please take the quiz first.</p>`;
+    }
+
+    function clearJsResults() {
+      localStorage.removeItem('jsQuizResults');
+      window.location.reload();
+    }
+
+    const mixedResults = JSON.parse(localStorage.getItem('mixedQuizResults'));
+
+    if (mixedResults) {
+      const mixedResultsContainer = document.getElementById('mixed-results-container');
+      mixedResultsContainer.innerHTML = `
+    <p>You scored <strong>${mixedResults.score}</strong> out of <strong>${mixedResults.totalQuestions}</strong> questions.</p>
+    <p>Unanswered Questions: <strong>${mixedResults.unansweredQuestions}</strong>.</p>
+  `;
+    } else {
+      const mixedResultsContainer = document.getElementById('mixed-results-container');
+      mixedResultsContainer.innerHTML = `<p>Error: No quiz results found for the Mixed Quizzes. Please take the quiz first.</p>`;
+    }
+
+    function clearMixedResults() {
+      localStorage.removeItem('mixedQuizResults');
+      window.location.reload();
+    }
+
+
+
+
+    const logo = document.getElementById('logo');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+
+    logo.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      content.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
       }
+    });
 
-      function clearResults() {
-        localStorage.removeItem('quizResults');
-        window.location.reload();
-      }
-
-      const logo = document.getElementById('logo');
-      const sidebar = document.getElementById('sidebar');
-      const content = document.getElementById('content');
-
-      logo.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        content.classList.toggle('active');
-      });
-
-      document.addEventListener('click', function (event) {
-        if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
-          sidebar.classList.remove('active');
-          content.classList.remove('active');
-        }
-      });
-
-    </script>
+  </script>
 </body>
 
 </html>

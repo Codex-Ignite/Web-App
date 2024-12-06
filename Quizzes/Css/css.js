@@ -8,7 +8,7 @@ let unansweredQuestions = 0;
 let quizzes;
 
 async function fetchQuizzes() {
-  const response = await fetch('css.json'); // Fetch css.json for CSS quiz questions
+  const response = await fetch('css.json'); 
   quizzes = await response.json();  // Store quizzes globally
 
   // Shuffle questions for each category after fetching
@@ -83,9 +83,19 @@ function nextQuestion() {
   if (currentQuestionIndex < quizzes.CSS.length) { // Ensure total questions are handled dynamically for CSS quiz
     displayQuestion();
   } else {
-    showResults();
-  }
+ 
+localStorage.setItem('cssQuizResults', JSON.stringify({
+  score: score,
+  totalQuestions: totalQuestions,
+  unansweredQuestions: unansweredQuestions
+}));
+
+// Redirect to the results page
+window.location.href = 'results.html'; // This will navigate to results.html page
 }
+}
+
+
 
 // Function to handle question submission
 async function handleSubmit() {
@@ -106,24 +116,6 @@ async function handleSubmit() {
   }
 
   nextQuestion();
-}
-
-// Function to display the final result
-function showResults() {
-  const resultContainer = document.getElementById("result");
-  resultContainer.innerHTML = `
-    You scored ${score} out of ${totalQuestions}.
-    <br>Unanswered Questions: ${unansweredQuestions}.
-  `;
-
-  
-  // Hide the quiz container, submit button, and timer
-  document.getElementById("quiz-container").style.display = "none";
-  document.getElementById("submit-btn").style.display = "none";
-  document.getElementById("timer").style.display = "none";
-
-  // Show the result container
-  resultContainer.style.display = "block";
 }
 
 // Initialize quiz display

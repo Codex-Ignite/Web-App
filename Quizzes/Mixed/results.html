@@ -124,7 +124,7 @@
   </header>
 
   <div class="result-container">
-    <h1>Html Quiz Results</h1>
+    <h1>Quiz Results</h1>
     <div id="result-display">
       <p class="score"></p>
       <p class="unanswered"></p>
@@ -134,7 +134,7 @@
 
   <script>
     // Retrieve the results from localStorage
-    const result = JSON.parse(localStorage.getItem('quizResults'));
+    const result = JSON.parse(localStorage.getItem('mixedQuizResults'));
 
     if (result) {
       document.querySelector('.score').textContent = `You scored ${result.score} out of ${result.totalQuestions}.`;

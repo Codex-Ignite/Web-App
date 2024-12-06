@@ -83,7 +83,15 @@ function nextQuestion() {
   if (currentQuestionIndex < quizzes.JavaScript.length) { // Dynamically handle total questions for JavaScript
     displayQuestion();
   } else {
-    showResults();
+    // Save the quiz results to localStorage
+    localStorage.setItem('jsQuizResults', JSON.stringify({
+      score: score,
+      totalQuestions: totalQuestions,
+      unansweredQuestions: unansweredQuestions
+    }));
+
+    // Redirect to the results page
+    window.location.href = 'results.html'; // This will navigate to results.html page
   }
 }
 

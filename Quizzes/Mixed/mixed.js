@@ -87,7 +87,15 @@ function nextQuestion() {
   if (currentQuestionIndex < quizzes.HTML.length) { // Ensure total questions are handled dynamically
     displayQuestion();
   } else {
-    showResults();
+    // Save the quiz results to localStorage
+    localStorage.setItem('mixedQuizResults', JSON.stringify({
+      score: score,
+      totalQuestions: totalQuestions,
+      unansweredQuestions: unansweredQuestions
+    }));
+
+    // Redirect to the results page
+    window.location.href = 'results.html'; // This will navigate to results.html page
   }
 }
 
