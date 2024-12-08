@@ -18,7 +18,7 @@ const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // Fetch questions and start the quiz
-fetch('questions.json')
+fetch('mixed.json')
     .then(response => response.json())
     .then(data => {
         questions = data;
@@ -44,7 +44,7 @@ function startQuiz() {
 }
 // Quit Quiz Button Functionality
 document.getElementById("exitQuizBtn").onclick = () => {
-    window.location.href = "../Quiz.html"; // Redirect to Quiz.html
+    window.location.href = "../index.html"; // Redirect to Quiz.html
 };
 
 // --------------- Show the Question ---------------
@@ -113,7 +113,7 @@ document.querySelector(".result_box .restart").onclick = () => {
 
 // --------------- Quit Quiz ---------------
 document.querySelector(".result_box .quit").onclick = () => {
-    window.location.href = "../Quiz.html"; // Redirect to Quiz.html
+    window.location.href = "../index.html"; // Redirect to Quiz.html
 };
 
 // --------------- Update Question Counter ---------------

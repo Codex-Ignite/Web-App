@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <title>About Us</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
 
 /* General Reset */
 * {
@@ -10,7 +22,7 @@
 
 /* Body Styles */
 body {
-    background: url(./imgs/n.jpg) no-repeat;
+    background: url(../Pictures/n.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 100vh;
@@ -293,3 +305,90 @@ footer p {
         align-items: center;
     }
 }
+
+  </style>
+
+<body>
+  <header>
+    <a href="javascript:void(0);" class="logo-link" id="logo-link">
+      <img src="../Pictures/n.jpg" alt="Codex Ignite Quiz Logo" id="logo" class="logo-image">
+      <div class="h"><h1 class="logo-text">Codex Ignite</h1></div>
+    </a>
+</header>
+
+<nav class="sidebar" id="sidebar" aria-hidden="true">
+  <ul>
+    <li><a href="../Dashboard/"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
+    <li><a href="../Quizzes/"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
+    <li><a href="../Results/"><i class="icon">&#x1F4C8;</i> Results</a></li>
+    <li><a href="../AboutUs/"><i class="icon">&#x1F4C4;</i> About Us</a></li> 
+    <li><a href="../ContactUs/"><i class="icon">&#x1F4E7;</i> Contact Us</a></li>
+    <li><a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Log Out</a></li>
+</ul>
+</nav>
+
+   <div class="about-us">
+  <h1>About Us</h1>
+  <p>Welcome to Codex Ignite Quiz! Our mission is to provide an engaging, interactive learning platform designed to help students and IT enthusiasts sharpen their skills in essential web technologies such as HTML, CSS, JavaScript, and more. Whether you're preparing for exams, building your portfolio, or simply curious about web development, Codex Ignite offers a fun, challenging, and rewarding way to learn.</p>
+  <p>Our team consists of passionate developers and designers who are committed to creating a seamless experience for users, from intuitive interfaces to robust backend solutions. We're here to help you ignite your coding journey!</p>
+</div>
+
+<section class="team">
+  <div class="team-member">
+    <img src="../Pictures/Person-Icon.webp" alt="Kent Ryan L. Pagongpong">
+    <h3>Kent Ryan L. Pagongpong</h3>
+    <h4>Lead Developer</h4>
+    <p>Kent is the driving force behind Codex Ignite Quiz, overseeing the development 
+      and ensuring the platform runs smoothly.</p>
+  </div>
+  <div class="team-member">
+    <img src="../Pictures/Person-Icon.webp" alt="Rainiel Jevson Bernales">
+    <h3>Rainiel Jevson Bernales</h3>
+    <h4>UI/UX Designer</h4>
+    <p>Rainiel brings creativity and a user-centered approach to Codex Ignite Quiz. </p>
+  </div>
+  <div class="team-member">
+    <img src="../Pictures/Person-Icon.webp" alt="Joshua Eviota">
+    <h3>Joshua B. Eviota</h3>
+    <h4>Back-End Developer</h4>
+    <p>Joshua manages the server-side functionality, making sure the platform remains fast, reliable, and scalable.</p>
+  </div>
+  <div class="team-member">
+    <img src="../Pictures/Person-Icon.webp" alt="Rusell Jay L. Ching">
+    <h4>Rusell Jay L. Ching</h4>
+    <p>Front-End Developer</p>
+    <p>Rusell is the one who brings the visual designs to life. He focuses on creating responsive, 
+      interactive elements that make learning on Codex Ignite Quiz engaging and dynamic.</p>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+      <p>&copy; 2024 Codex Ignite Quiz. All Rights Reserved.</p>
+      <p>Connect with us on <a href="https://github.com/Codex-Ignite">GitHub</a>.</p>
+  </div>
+</footer>
+
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const content = document.getElementById("content");
+    const logoLink = document.getElementById("logo-link");
+
+    // Toggle sidebar visibility when clicking the logo
+    logo.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      content.classList.toggle('active');
+    });
+
+    // Close sidebar when clicking anywhere outside
+    document.addEventListener('click', function (event) {
+      if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+
+</html>

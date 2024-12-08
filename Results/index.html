@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Quiz Results</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Body Styles */
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../Pictures/n.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+/* Transition */
+a, .btn {
+    transition: all 300ms ease;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(180deg, #0a1615, #372685);
+    font-size: 24px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    border-bottom: 3px solid #00bcd4;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo Link */
+#logo-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    z-index: 15;
+}
+
+.logo-image {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: 2rem;
+    margin-right: 1rem;
+}
+
+.logo-image:hover {
+    transform: scale(1.07);
+}
+
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    color: #ffffff;
+}
+
+#logo-link:hover .logo-text {
+    color: #00bcd4;
+}
+
+#logo-link:hover .logo-image {
+    transform: scale(1.1);
+}
+
+/* Sidebar */
+.sidebar {
+    margin-top: 3.5rem;
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    transition: all 0.4s ease;
+    z-index: 5;
+    border-radius: 10px;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    padding: 20px;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    transform: translateX(10px);
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Results-Container Styles */
+.Results-Container {
+    color: #fff;
+    margin-top: 6rem;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #00bcd4;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-left: 430px;
+}
+
+/* For smaller screen sizes, adjust the width, margins, and padding */
+@media (max-width: 1024px) {
+    .Results-Container {
+        width: 90%; /* Adjust width for tablets */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .Results-Container {
+        width: 95%; /* Adjust width for smaller screens */
+        margin-top: 2rem; /* Adjust top margin for smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .Results-Container {
+        width: 100%; /* Full width on very small screens */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .Results-Container h1 {
+        font-size: 1.5rem; /* Adjust font size for small screens */
+    }
+
+    .Results-Container .score {
+        font-size: 1.2rem; /* Adjust score font size for small screens */
+    }
+
+    button {
+        font-size: 0.9rem; /* Reduce button font size */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+}
+
+/* Button Styling */
+button {
+    background-color: #00bcd4;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #008c9e;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Styling for Error Message */
+.error {
+    color: #f44336;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(180deg, #372685, #0a1615);
+    padding: 35px 0;
+    color: #ecf0f1;
+    font-size: 1rem;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    border-top: 3px solid #00bcd4;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content.active {
+        margin-left: 0;
+        animation: none; /* Disable slide animation for smaller screens */
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar ul li a {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="javascript:void(0);" class="logo-link" id="logo-link">
+      <img src="../Pictures/Logo.png" alt="Codex Ignite Quiz Logo" id="logo" class="logo-image">
+      <span class="logo-text">Codex Ignite</span>
+    </a>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="../Dashboard/"><i class="icon">&#x1F4CA;</i> Dashboard</a></li>
+        <li><a href="../Quizzes/"><i class="icon">&#x1F4DD;</i> Start Quiz</a></li>
+        <li><a href="../Results/"><i class="icon">&#x1F4C8;</i> Results</a></li>
+        <li><a href="../AboutUs/"><i class="icon">&#x1F4C4;</i> About Us</a></li> 
+        <li><a href="../ContactUs/"><i class="icon">&#x1F4E7;</i> Contact Us</a></li>
+        <li><a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Log Out</a></li>
+    </ul>
+    </nav>
+
+    <!-- Results Containers -->
+    <div class="Results-Container">
+      <h2>HTML Quiz Results</h2>
+      <div id="results-container">
+      </div>
+      <button onclick="window.location.href='./Quizzes/Html/html.html';">Go Back to Quiz</button>
+      <button onclick="clearResults()">Clear Results</button>
+    </div>
+
+
+
+    <div class="Results-Container">
+      <h2>CSS Quiz Results</h2>
+      <div id="css-results-container"></div>
+    <button onclick="window.location.href='./Quizzes/Css/css.html';">Go Back to Quiz</button>
+    <button onclick="clearCssResults()">Clear Results</button>
+
+
+  </div>
+
+  <div class="Results-Container">
+    <h2>JavaScript Quiz Results</h2>
+    <div id="js-results-container"></div>
+
+  <button onclick="window.location.href='./Quizzes/JavaScript/js.html';">Go Back to Quiz</button>
+  <button onclick="clearJsResults()">Clear Results</button>
+  </div>
+
+  <div class="Results-Container">
+    <h2>Mixed Quiz Results</h2>
+    <div id="mixed-results-container"></div>
+   
+    <button onclick="window.location.href='./Quizzes/Mixed/mixed.html';">Go Back to Quiz</button>
+    <button onclick="clearMixedResults()">Clear Results</button>
+
+  </div>
+
+  <footer>
+    <div class="container">
+        <p>&copy; 2024 Codex Ignite Quiz. All Rights Reserved.</p>
+        <p>Connect with us on <a href="https://github.com/Codex-Ignite">GitHub</a>.</p>
+    </div>
+</footer>
+
+    <script>
+      const results = JSON.parse(localStorage.getItem('quizResults'));
+
+if (results) {
+  const resultsContainer = document.getElementById('results-container');
+  resultsContainer.innerHTML = `
+    <p>You scored <strong>${results.score}</strong> out of <strong>${results.totalQuestions}</strong> questions.</p>
+    <p>Unanswered Questions: <strong>${results.unansweredQuestions}</strong>.</p>
+  `;
+} else {
+  const resultsContainer = document.getElementById('results-container');
+  resultsContainer.innerHTML = `<p>Error: No quiz results found for HTML Quiz. Please take the quiz first.</p>`;
+}
+
+function clearResults() {
+  localStorage.removeItem('quizResults');
+  window.location.reload();
+}
+
+const cssResults = JSON.parse(localStorage.getItem('cssQuizResults'));
+
+if (cssResults) {
+  const cssResultsContainer = document.getElementById('css-results-container');
+  cssResultsContainer.innerHTML = `
+<p>You scored <strong>${cssResults.score}</strong> out of <strong>${cssResults.totalQuestions}</strong> questions.</p>
+<p>Unanswered Questions: <strong>${cssResults.unansweredQuestions}</strong>.</p>
+`;
+} else {
+  const cssResultsContainer = document.getElementById('css-results-container');
+  cssResultsContainer.innerHTML = `<p>Error: No quiz results found for the CSS Quiz. Please take the quiz first.</p>`;
+}
+
+function clearCssResults() {
+  localStorage.removeItem('cssQuizResults');
+  window.location.reload();
+}
+
+const jsResults = JSON.parse(localStorage.getItem('jsQuizResults'));
+
+if (jsResults) {
+  const jsResultsContainer = document.getElementById('js-results-container');
+  jsResultsContainer.innerHTML = `
+<p>You scored <strong>${jsResults.score}</strong> out of <strong>${jsResults.totalQuestions}</strong> questions.</p>
+<p>Unanswered Questions: <strong>${jsResults.unansweredQuestions}</strong>.</p>
+`;
+} else {
+  const jsResultsContainer = document.getElementById('js-results-container');
+  jsResultsContainer.innerHTML = `<p>Error: No quiz results found for the JavaScript Quiz. Please take the quiz first.</p>`;
+}
+
+function clearJsResults() {
+  localStorage.removeItem('jsQuizResults');
+  window.location.reload();
+}
+
+const mixedResults = JSON.parse(localStorage.getItem('mixedQuizResults'));
+
+if (mixedResults) {
+  const mixedResultsContainer = document.getElementById('mixed-results-container');
+  mixedResultsContainer.innerHTML = `
+<p>You scored <strong>${mixedResults.score}</strong> out of <strong>${mixedResults.totalQuestions}</strong> questions.</p>
+<p>Unanswered Questions: <strong>${mixedResults.unansweredQuestions}</strong>.</p>
+`;
+} else {
+  const mixedResultsContainer = document.getElementById('mixed-results-container');
+  mixedResultsContainer.innerHTML = `<p>Error: No quiz results found for the Mixed Quizzes. Please take the quiz first.</p>`;
+}
+
+function clearMixedResults() {
+  localStorage.removeItem('mixedQuizResults');
+  window.location.reload();
+}
+
+
+
+
+const logo = document.getElementById('logo');
+const sidebar = document.getElementById('sidebar');
+const content = document.getElementById('content');
+
+logo.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  content.classList.toggle('active');
+});
+
+document.addEventListener('click', function (event) {
+  if (!sidebar.contains(event.target) && !logo.contains(event.target)) {
+    sidebar.classList.remove('active');
+    content.classList.remove('active');
+  }
+});
+    </script>
+</body>
+
+</html>
