@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="formstyles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper slide-down">
+        <form id="createAccountForm">
+            <h1>Registration</h1>
+            <div class="input-box">
+                <input type="text" id="username" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="email" id="email" placeholder="Email" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt toggle-password' id="togglePasswordLock"></i>
+                <i class='bx bxs-show toggle-password' id="togglePasswordEye"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <i class='bx bxs-lock-alt toggle-password' id="toggleConfirmPasswordLock"></i>
+                <i class='bx bxs-show toggle-password' id="toggleConfirmPasswordEye"></i>
+            </div>
+            <button type="submit" class="btn">Create Account</button>
+            <div id="feedback" style="display: none;"></div>
+            <div class="register-link">
+                <p>Already have an account? <a href="index.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+    <Script src="/assets/js/create.js"></Script>
+    <script>
+        document.querySelector('.wrapper').classList.add('slide-down');
+    </script>
+</body>
+</html>
