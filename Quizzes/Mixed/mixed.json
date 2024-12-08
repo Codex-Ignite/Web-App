@@ -1,0 +1,389 @@
+[
+    {
+      "numb": 1,
+      "question": "What does HTML stand for?",
+      "answer": "Hyper Text Markup Language",
+      "options": [
+        "Hyper Text Markup Language",
+        "Hyperlinks and Text Markup Language",
+        "Home Tool Markup Language",
+        "None of the above"
+      ]
+    },
+    {
+      "numb": 2,
+      "question": "Which HTML element is used to define the largest heading?",
+      "answer": "<h1>",
+      "options": [
+      "&lt;h1&gt;",
+      "&lt;heading&gt;",
+      "&lt;h6&gt;",
+      "&lt;head&gt;"
+    ]
+    },
+    {
+      "numb": 3,
+      "question": "Which HTML element is used to define a paragraph?",
+      "answer": "<p>",
+      "options": [
+      "&lt;para&gt;",
+      "&lt;p&gt;",
+      "&lt;paragraph&gt;",
+      "&lt;pr&gt;"
+    ]
+    },
+    {
+      "numb": 4,
+      "question": "Which attribute is used to specify the URL in an anchor (<a>) tag?",
+      "answer": "href",
+      "options": [
+        "src",
+        "href",
+        "link",
+        "url"
+      ]
+    },
+    {
+      "numb": 5,
+      "question": "What is the correct HTML element for inserting an image?",
+      "answer": "<img src=image.jpg>",
+    "options": [
+      "&lt;img src=image.jpg&gt;",
+      "&lt;image href=&quot;image.jpg&quot;&gt;",
+      "&lt;img link=&quot;image.jpg&quot;&gt;",
+      "&lt;img url=&quot;image.jpg&quot;&gt;"
+    ]
+    },
+    {
+      "numb": 6,
+      "question": "What is the correct HTML for inserting a line break?",
+      "answer": "<br>",
+      "options": [
+      "&lt;br&gt;",
+      "&lt;break&gt;",
+      "&lt;lb&gt;",
+      "&lt;line&gt;"
+    ]
+    },
+    {
+      "numb": 7,
+      "question": "Which HTML element is used to create an unordered list?",
+      "answer": "<ul>",
+      "options": [
+      "&lt;ol&gt;",
+      "&lt;ul&gt;",
+      "&lt;list&gt;",
+      "&lt;li&gt;"
+    ]
+    },
+    {
+      "numb": 8,
+      "question": "Which HTML element is used to create a form?",
+      "answer": "<form>",
+      "options": [
+      "&lt;form&gt;",
+      "&lt;input&gt;",
+      "&lt;label&gt;",
+      "&lt;button&gt;"
+    ]
+    },
+    {
+      "numb": 9,
+      "question": "How do you write a comment in HTML?",
+      "answer": "<!-- Comment -->",
+      "options": [
+      "&lt;!-- Comment --&gt;",
+      "/* Comment */",
+      "// Comment",
+      "# Comment"
+    ]
+    },
+    {
+      "numb": 10,
+      "question": "Which declaration is used to define the document type in HTML5?",
+      "answer": "<!DOCTYPE html>",
+      "options": [
+      "&lt;!DOCTYPE html&gt;",
+      "&lt;!DOCTYPE HTML5&gt;",
+      "&lt;DOCTYPE html&gt;",
+      "&lt;doctype html&gt;"
+    ]
+    },
+  {
+    
+      "numb": 1,
+      "question": "What does CSS stand for?",
+      "answer": "Cascading Style Sheets",
+      "options": [
+        "Computer Style Sheets",
+        "Cascading Style Sheets",
+        "Colorful Style Sheets",
+        "Creative Style Sheets"
+      ]
+    },
+    {
+      "numb": 2,
+      "question": "Which HTML tag is used to link an external CSS file?",
+      "answer": "<link>",
+      "options": [
+      "&lt;css&gt;",
+      "&lt;style&gt;",
+      "&lt;link&gt;",
+      "&lt;stylesheet&gt;"
+    ]
+    },
+    {
+      "numb": 3,
+      "question": "Which property is used to change the background color in CSS?",
+      "answer": "background-color",
+      "options": [
+        "color",
+        "background-color",
+        "bgcolor",
+        "background"
+      ]
+    },
+    {
+      "numb": 4,
+      "question": "How do you make the text bold using CSS?",
+      "answer": "font-weight: bold;",
+      "options": [
+        "font-weight: bold;",
+        "font-style: bold;",
+        "text-bold: true;",
+        "text-decoration: bold;"
+      ]
+    },
+    {
+      "numb": 5,
+      "question": "What is the correct syntax for applying a class in CSS?",
+      "answer": ".classname {}",
+      "options": [
+        "#classname {}",
+        ".classname {}",
+        "classname {}",
+        "*classname {}"
+      ]
+    },
+    {
+      "numb": 6,
+      "question": "Which CSS property controls the text size?",
+      "answer": "font-size",
+      "options": [
+        "font-size",
+        "text-size",
+        "text-style",
+        "size"
+      ]
+    },
+    {
+      "numb": 7,
+      "question": "How do you center an element horizontally using CSS?",
+      "answer": "margin-left: auto; margin-right: auto;",
+      "options": [
+        "margin-left: auto; margin-right: auto;",
+        "text-align: center;",
+        "float: center;",
+        "align: center;"
+      ]
+    },
+    {
+      "numb": 8,
+      "question": "What is the default display property for a <div> element?",
+      "answer": "block",
+      "options": [
+        "block",
+        "inline",
+        "inline-block",
+        "flex"
+      ]
+    },
+    {
+      "numb": 9,
+      "question": "How do you create rounded corners in CSS?",
+      "answer": "border-radius",
+      "options": [
+        "border-radius",
+        "corner-radius",
+        "round-border",
+        "border-curve"
+      ]
+    },
+    {
+      "numb": 10,
+      "question": "Which property is used to control the space between lines of text?",
+      "answer": "line-height",
+      "options": [
+        "line-height",
+        "letter-spacing",
+        "word-spacing",
+        "text-spacing"
+      ]
+    },
+    {
+      "numb": 11,
+      "question": "How can you make a list display without bullet points in CSS?",
+      "answer": "list-style-type: none;",
+      "options": [
+        "list-style-type: none;",
+        "text-decoration: none;",
+        "list-type: none;",
+        "bullet-style: none;"
+      ]
+    },
+    {
+      "numb": 12,
+      "question": "Which CSS property is used to make an element transparent?",
+      "answer": "opacity: 0;",
+      "options": [
+        "visibility: hidden;",
+        "opacity: 0;",
+        "transparent: true;",
+        "opacity: 1;"
+      ]
+    },
+    {
+      "numb": 13,
+      "question": "How can you increase the space between individual letters in CSS?",
+      "answer": "letter-spacing",
+      "options": [
+        "text-indent",
+        "letter-spacing",
+        "line-height",
+        "word-spacing"
+      ]
+    },
+    {
+      "numb": 14,
+      "question": "How do you specify that an element should be positioned relative to its normal position?",
+      "answer": "position: relative;",
+      "options": [
+        "position: static;",
+        "position: relative;",
+        "position: absolute;",
+        "position: fixed;"
+      ]
+    },
+    {
+      "numb": 15,
+      "question": "Which of the following is NOT a valid CSS length unit?",
+      "answer": "mp",
+      "options": [
+        "px",
+        "em",
+        "pt",
+        "mp"
+      ]
+    },
+    {
+      "numb": 1,
+      "question": "What is the correct syntax to print a message to the console in JavaScript?",
+      "answer": "console.log('Hello World!');",
+      "options": [
+        "console.print('Hello World!');",
+        "console.log('Hello World!');",
+        "log.console('Hello World!');",
+        "print.console('Hello World!');"
+      ]
+    },
+    {
+      "numb": 2,
+      "question": "Which of the following is NOT a valid variable declaration in JavaScript?",
+      "answer": "number a = 15;",
+      "options": [
+        "let x = 5;",
+        "var y = 10;",
+        "const z = 20;",
+        "number a = 15;"
+      ]
+    },
+    {
+      "numb": 3,
+      "question": "How do you create a function in JavaScript?",
+      "answer": "function myFunction() {}",
+      "options": [
+        "function myFunction() {}",
+        "func myFunction() {}",
+        "create function myFunction() {}",
+        "def myFunction() {}"
+      ]
+    },
+    {
+      "numb": 4,
+      "question": "What does the typeof operator do in JavaScript?",
+      "answer": "Returns the type of a variable",
+      "options": [
+        "Checks if a variable is undefined",
+        "Returns the type of a variable",
+        "Converts a variable to a string",
+        "Compares two variables"
+      ]
+    },
+    {
+      "numb": 5,
+      "question": "How do you add a comment in JavaScript?",
+      "answer": "// This is a comment",
+      "options": [
+        "# This is a comment",
+        "// This is a comment",
+        "/* This is a comment */",
+        "<!-- This is a comment -->"
+      ]
+    },
+    {
+      "numb": 6,
+      "question": "What will the following code output? console.log(2 + '2');",
+      "answer": "22",
+      "options": [
+        "4",
+        "22",
+        "Error",
+        "undefined"
+      ]
+    },
+    {
+      "numb": 7,
+      "question": "Which of the following is a valid way to declare a constant in JavaScript?",
+      "answer": "const pi = 3.14;",
+      "options": [
+        "const pi = 3.14;",
+        "constant pi = 3.14;",
+        "let pi = 3.14;",
+        "var pi = 3.14;"
+      ]
+    },
+    {
+      "numb": 8,
+      "question": "Which event is triggered when a user clicks on an HTML element?",
+      "answer": "click",
+      "options": [
+        "hover",
+        "click",
+        "change",
+        "focus"
+      ]
+    },
+    {
+      "numb": 9,
+      "question": "What does the 'return' statement do in a JavaScript function?",
+      "answer": "Exits the function and returns a value",
+      "options": [
+        "Exits the function and returns a value",
+        "Exits the function without returning anything",
+        "Repeats the function",
+        "Ends the script"
+      ]
+    },
+    {
+      "numb": 10,
+      "question": "Which method is used to remove the last element from an array in JavaScript?",
+      "answer": "pop()",
+      "options": [
+        "push()",
+        "shift()",
+        "pop()",
+        "splice()"
+      ]
+    }
+  ]
+
