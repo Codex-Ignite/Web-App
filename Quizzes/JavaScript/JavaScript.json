@@ -1,0 +1,166 @@
+[
+  {
+    "numb": 1,
+    "question": "What is the correct syntax to print a message to the console in JavaScript?",
+    "answer": "console.log('Hello World!');",
+    "options": [
+      "console.print('Hello World!');",
+      "console.log('Hello World!');",
+      "log.console('Hello World!');",
+      "print.console('Hello World!');"
+    ]
+  },
+  {
+    "numb": 2,
+    "question": "Which of the following is NOT a valid variable declaration in JavaScript?",
+    "answer": "number a = 15;",
+    "options": [
+      "let x = 5;",
+      "var y = 10;",
+      "const z = 20;",
+      "number a = 15;"
+    ]
+  },
+  {
+    "numb": 3,
+    "question": "How do you create a function in JavaScript?",
+    "answer": "function myFunction() {}",
+    "options": [
+      "function myFunction() {}",
+      "func myFunction() {}",
+      "create function myFunction() {}",
+      "def myFunction() {}"
+    ]
+  },
+  {
+    "numb": 4,
+    "question": "What does the type of operator do in JavaScript?",
+    "answer": "Returns the type of a variable",
+    "options": [
+      "Checks if a variable is undefined",
+      "Returns the type of a variable",
+      "Converts a variable to a string",
+      "Compares two variables"
+    ]
+  },
+  {
+    "numb": 5,
+    "question": "How do you add a comment in JavaScript?",
+    "answer": "// This is a comment",
+    "options": [
+      "# This is a comment",
+      "// This is a comment",
+      "&lt;!-- This is a comment --&gt;"
+    ]
+  },
+  {
+    "numb": 6,
+    "question": "What will console.log(2 + '2') output in JavaScript?",
+    "answer": "22",
+    "options": [
+      "4",
+      "22",
+      "undefined",
+      "NaN"
+    ]
+  },
+  {
+    "numb": 7,
+    "question": "Which of the following is a JavaScript data type?",
+    "answer": "string",
+    "options": [
+      "string",
+      "text",
+      "integer",
+      "char"
+    ]
+  },
+  {
+    "numb": 8,
+    "question": "What is the result of Boolean(0) in JavaScript?",
+    "answer": "false",
+    "options": [
+      "true",
+      "false",
+      "null",
+      "undefined"
+    ]
+  },
+  {
+    "numb": 9,
+    "question": "How do you create an array in JavaScript?",
+    "answer": "array = [1, 2, 3];",
+    "options": [
+      "array = [1, 2, 3];",
+      "array = (1, 2, 3);",
+      "array = {1, 2, 3};",
+      "array = <1, 2, 3>;"
+    ]
+  },
+  {
+    "numb": 10,
+    "question": "Which of the following is the correct syntax for an if statement in JavaScript?",
+    "answer": "if (x > 5) {}",
+    "options": [
+      "if (x > 5) {}",
+      "if x > 5 then {}",
+      "if (x > 5);",
+      "if x > 5 {}"
+    ]
+  },
+  {
+    "numb": 11,
+    "question": "What does the push() method do in JavaScript?",
+    "answer": "Adds a new element at the end of an array",
+    "options": [
+      "Removes the last element from an array",
+      "Adds a new element at the beginning of an array",
+      "Adds a new element at the end of an array",
+      "Returns the last element of an array"
+    ]
+  },
+  {
+    "numb": 12,
+    "question": "Which of the following methods can be used to convert a string to a number in JavaScript?",
+    "answer": "All of the above",
+    "options": [
+      "parseInt()",
+      "parseFloat()",
+      "Number()",
+      "All of the above"
+    ]
+  },
+  {
+    "numb": 13,
+    "question": "What does the this keyword refer to in JavaScript?",
+    "answer": "The current object or context",
+    "options": [
+      "The global object",
+      "The function object",
+      "The current object or context",
+      "None of the above"
+    ]
+  },
+  {
+    "numb": 14,
+    "question": "How do you write an infinite loop in JavaScript?",
+    "answer": "All of the above",
+    "options": [
+      "for(;;)",
+      "while(true)",
+      "do {} while(true);",
+      "All of the above"
+    ]
+  },
+  {
+    "numb": 15,
+    "question": "What is the correct way to write a JavaScript array with mixed data types?",
+    "answer": "let arr = [1, 'Hello', true];",
+    "options": [
+      "let arr = [1, 'Hello', true];",
+      "let arr = [1, 2, 3];",
+      "let arr = {1, 'Hello', true};",
+      "let arr = (1, 'Hello', true);"
+    ]
+  }
+]
