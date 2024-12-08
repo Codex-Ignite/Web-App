@@ -1,0 +1,112 @@
+[
+  {
+    "numb": 1,
+    "question": "What does HTML stand for?",
+    "answer": "Hyper Text Markup Language",
+    "options": [
+      "Hyper Text Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language",
+      "None of the above"
+    ]
+  },
+  {
+    "numb": 2,
+    "question": "Which HTML element is used to define the largest heading?",
+    "answer": "<h1>",
+    "options": [
+      "&lt;h1&gt;",
+      "&lt;heading&gt;",
+      "&lt;h6&gt;",
+      "&lt;head&gt;"
+    ]
+  },
+  {
+    "numb": 3,
+    "question": "Which HTML element is used to define a paragraph?",
+    "answer": "<p>",
+    "options": [
+      "&lt;para&gt;",
+      "&lt;p&gt;",
+      "&lt;paragraph&gt;",
+      "&lt;pr&gt;"
+    ]
+  },
+  {
+    "numb": 4,
+    "question": "Which attribute is used to specify the URL in an anchor (&lt;a&gt;) tag?",
+    "answer": "href",
+    "options": [
+      "src",
+      "href",
+      "link",
+      "url"
+    ]
+  },
+  {
+    "numb": 5,
+    "question": "What is the correct HTML element for inserting an image?",
+    "answer": "<img src=image.jpg>",
+    "options": [
+      "&lt;img src=image.jpg&gt;",
+      "&lt;image href=&quot;image.jpg&quot;&gt;",
+      "&lt;img link=&quot;image.jpg&quot;&gt;",
+      "&lt;img url=&quot;image.jpg&quot;&gt;"
+    ]
+  },
+  {
+    "numb": 6,
+    "question": "What is the correct HTML for inserting a line break?",
+    "answer": "<br>",
+    "options": [
+      "&lt;br&gt;",
+      "&lt;break&gt;",
+      "&lt;lb&gt;",
+      "&lt;line&gt;"
+    ]
+  },
+  {
+    "numb": 7,
+    "question": "Which HTML element is used to create an unordered list?",
+    "answer": "<ul>",
+    "options": [
+      "&lt;ol&gt;",
+      "&lt;ul&gt;",
+      "&lt;list&gt;",
+      "&lt;li&gt;"
+    ]
+  },
+  {
+    "numb": 8,
+    "question": "Which HTML element is used to create a form?",
+    "answer": "<form>",
+    "options": [
+      "&lt;form&gt;",
+      "&lt;input&gt;",
+      "&lt;label&gt;",
+      "&lt;button&gt;"
+    ]
+  },
+  {
+    "numb": 9,
+    "question": "How do you write a comment in HTML?",
+    "answer": "<!-- Comment -->",
+    "options": [
+      "&lt;!-- Comment --&gt;",
+      "/* Comment */",
+      "// Comment",
+      "# Comment"
+    ]
+  },
+  {
+    "numb": 10,
+    "question": "Which declaration is used to define the document type in HTML5?",
+    "answer": "<!DOCTYPE html>",
+    "options": [
+      "&lt;!DOCTYPE html&gt;",
+      "&lt;!DOCTYPE HTML5&gt;",
+      "&lt;DOCTYPE html&gt;",
+      "&lt;doctype html&gt;"
+    ]
+  }
+]
